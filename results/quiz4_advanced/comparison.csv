@@ -1,0 +1,17 @@
+﻿pair,case,condition,preprocess,left_keypoints,right_keypoints,good_matches,ransac_inliers,inlier_ratio,sift_success,opencv_success,sift_note,opencv_note,file_prefix
+success,original,原圖,raw,469,193,48,19,0.396,True,True,已產生 SIFT 拼接圖；仍須目視檢查接縫,成功,success
+success,original,原圖,clahe,805,451,67,21,0.313,True,True,已產生 SIFT 拼接圖；仍須目視檢查接縫,成功,success_original_clahe
+success,brightness_70,右圖亮度 70%,raw,469,118,23,13,0.565,True,True,已產生 SIFT 拼接圖；仍須目視檢查接縫,成功,success_brightness_70_raw
+success,brightness_70,右圖亮度 70%,clahe,805,299,44,16,0.364,True,True,已產生 SIFT 拼接圖；仍須目視檢查接縫,成功,success_brightness_70_clahe
+success,brightness_40,右圖亮度 40%,raw,469,33,9,0,0.0,False,False,可靠匹配點少於 10 個,失敗，狀態碼 1,success_brightness_40_raw
+success,brightness_40,右圖亮度 40%,clahe,805,153,37,15,0.405,True,False,已產生 SIFT 拼接圖；仍須目視檢查接縫,失敗，狀態碼 1,success_brightness_40_clahe
+success,brightness_20,右圖亮度 20%,raw,469,3,1,0,0.0,False,False,可靠匹配點少於 10 個,失敗，狀態碼 1,success_brightness_20_raw
+success,brightness_20,右圖亮度 20%,clahe,805,43,9,0,0.0,False,False,可靠匹配點少於 10 個,失敗，狀態碼 1,success_brightness_20_clahe
+success,overlap_crop_15,裁掉右圖左側 15%,raw,469,146,28,9,0.321,False,False,幾何驗證通過的匹配點太少,失敗，狀態碼 1,success_overlap_crop_15_raw
+success,overlap_crop_15,裁掉右圖左側 15%,clahe,805,384,54,3,0.056,False,True,幾何驗證通過的匹配點太少,成功,success_overlap_crop_15_clahe
+success,overlap_crop_30,裁掉右圖左側 30%,raw,469,134,29,9,0.31,False,False,幾何驗證通過的匹配點太少,失敗，狀態碼 1,success_overlap_crop_30_raw
+success,overlap_crop_30,裁掉右圖左側 30%,clahe,805,352,43,12,0.279,False,False,未產生 SIFT 拼接圖：變換後的照片四角交錯,失敗，狀態碼 1,success_overlap_crop_30_clahe
+success,overlap_crop_45,裁掉右圖左側 45%,raw,469,86,16,4,0.25,False,False,幾何驗證通過的匹配點太少,失敗，狀態碼 1,success_overlap_crop_45_raw
+success,overlap_crop_45,裁掉右圖左側 45%,clahe,805,310,36,9,0.25,False,False,幾何驗證通過的匹配點太少,失敗，狀態碼 1,success_overlap_crop_45_clahe
+failure,original,原圖（既有失敗組）,raw,2435,1524,97,28,0.289,False,False,未產生 SIFT 拼接圖：變換後的照片四角交錯,失敗，狀態碼 1,failure
+failure,original,原圖（既有失敗組）,clahe,5101,4813,108,35,0.324,False,False,未產生 SIFT 拼接圖：變換後的照片四角交錯,失敗，狀態碼 1,failure_original_clahe

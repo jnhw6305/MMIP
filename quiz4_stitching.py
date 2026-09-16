@@ -1,11 +1,13 @@
-"""第 60 頁：比較一組可拼接與一組難以拼接的照片。
+"""Quiz 4 進階：比較亮度、重疊範圍與 CLAHE 對影像拼接的影響。
 
-在 MMIP作業 資料夾執行：python quiz4_two_pairs.py
-輸出都放在 results/quiz4_two_pairs/。
+執行：python quiz4_stitching.py
+每次結果會存入 results/quiz4_two_pairs/experiments_時間戳/，不覆蓋舊結果。
 """
 
 from pathlib import Path
 import argparse
+import csv
+from datetime import datetime
 
 import cv2
 import numpy as np
@@ -46,6 +48,27 @@ def comparison(left, right):
     return cv2.hconcat(parts)
 
 
+def apply_clahe(image):
+    """只增強亮度通道，避免直接對 B、G、R 各通道處理而改變色相。"""
+    ycrcb = cv2.cvtColor(image, cv2.COLOR_BGR2YCrCb)
+    ycrcb[:, :, 0] = cv2.createCLAHE(
+        clipLimit=2.0, tileGridSize=(8, 8)
+    ).apply(ycrcb[:, :, 0])
+    return cv2.cvtColor(ycrcb, cv2.COLOR_YCrCb2BGR)
+
+
+def experiment_cases(left, right):
+    """固定原圖，僅改動右圖；右圖左側是兩張室內照片的重疊側。"""
+    yield "original", "原圖", left, right
+    for factor in (0.70, 0.40, 0.20):
+        darker = np.clip(right.astype(np.float32) * factor, 0, 255)
+        yield f"brightness_{int(factor * 100):02d}", f"右圖亮度 {factor:.0%}", left, darker.astype(np.uint8)
+    for fraction in (0.15, 0.30, 0.45):
+        cut = round(right.shape[1] * fraction)
+        cropped = np.ascontiguousarray(right[:, cut:])
+        yield f"overlap_crop_{int(fraction * 100):02d}", f"裁掉右圖左側 {fraction:.0%}", left, cropped
+
+
 def sift_homography(left, right, prefix, results_dir):
     sift = cv2.SIFT_create()
     kp_left, desc_left = sift.detectAndCompute(
@@ -65,7 +88,8 @@ def sift_homography(left, right, prefix, results_dir):
 
     matcher = cv2.BFMatcher(cv2.NORM_L2)
     pairs = matcher.knnMatch(desc_right, desc_left, k=2)
-    good = [m for m, n in pairs if m.distance < 0.75 * n.distance]
+    good = [pair[0] for pair in pairs
+            if len(pair) == 2 and pair[0].distance < 0.75 * pair[1].distance]
     stats["good_matches"] = len(good)
     if good:
         visual = cv2.drawMatches(
@@ -154,25 +178,30 @@ def make_sift_panorama(left, right, homography):
     return panorama[ys.min():ys.max() + 1, xs.min():xs.max() + 1]
 
 
-def process_pair(label, left_name, right_name, images_dir, results_dir):
-    left = read_image(images_dir / left_name)
-    right = read_image(images_dir / right_name)
+def process_case(pair_name, case_name, condition, method, left, right, results_dir):
+    label = pair_name if case_name == "original" and method == "raw" else f"{pair_name}_{case_name}_{method}"
+    if method == "clahe":
+        left, right = apply_clahe(left), apply_clahe(right)
     save_image(results_dir / f"{label}_comparison.jpg", comparison(left, right))
 
+    cv2.setRNGSeed(0)
     homography, stats, sift_status = sift_homography(
         left, right, label, results_dir
     )
     sift_panorama_status = sift_status
+    sift_ok = False
     if homography is not None:
         try:
             panorama = make_sift_panorama(left, right, homography)
             save_image(results_dir / f"{label}_sift_panorama.jpg", panorama)
             sift_panorama_status = "已產生 SIFT 拼接圖；仍須目視檢查接縫"
+            sift_ok = True
         except ValueError as exc:
             sift_panorama_status = f"未產生 SIFT 拼接圖：{exc}"
 
     # OpenCV 內建 Stitcher 用來比較自製 SIFT 拼接的效果。
     # 它內部的特徵方法不一定是 SIFT，因此結果要分開標示。
+    opencv_ok = False
     try:
         status, stitched = cv2.Stitcher_create(
             cv2.Stitcher_PANORAMA
@@ -180,23 +209,85 @@ def process_pair(label, left_name, right_name, images_dir, results_dir):
         if status == cv2.Stitcher_OK and stitched is not None:
             save_image(results_dir / f"{label}_opencv_panorama.jpg", stitched)
             opencv_status = "成功"
+            opencv_ok = True
         else:
             opencv_status = f"失敗，狀態碼 {status}"
     except cv2.error as exc:
         opencv_status = f"失敗：{str(exc).splitlines()[0]}"
 
+    record = {
+        "pair": pair_name,
+        "case": case_name,
+        "condition": condition,
+        "preprocess": method,
+        "left_keypoints": stats["left_keypoints"],
+        "right_keypoints": stats["right_keypoints"],
+        "good_matches": stats["good_matches"],
+        "ransac_inliers": stats["inliers"],
+        "inlier_ratio": round(stats["inliers"] / stats["good_matches"], 3) if stats["good_matches"] else 0.0,
+        "sift_success": sift_ok,
+        "opencv_success": opencv_ok,
+        "sift_note": sift_panorama_status,
+        "opencv_note": opencv_status,
+        "file_prefix": label,
+    }
+    print(f"[{label}] 匹配 {record['good_matches']}、內點 {record['ransac_inliers']}、"
+          f"SIFT {'成功' if sift_ok else '失敗'}、OpenCV {'成功' if opencv_ok else '失敗'}")
+    return record
+
+
+def write_reports(records, results_dir):
+    csv_path = results_dir / "comparison.csv"
+    with csv_path.open("w", newline="", encoding="utf-8-sig") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(records[0]))
+        writer.writeheader()
+        writer.writerows(records)
+
     lines = [
-        f"[{label}] {left_name} + {right_name}",
-        f"左圖 SIFT 特徵點：{stats['left_keypoints']}",
-        f"右圖 SIFT 特徵點：{stats['right_keypoints']}",
-        f"可靠匹配點：{stats['good_matches']}",
-        f"RANSAC 內點：{stats['inliers']}",
-        f"SIFT 拼接：{sift_panorama_status}",
-        f"OpenCV Stitcher：{opencv_status}",
-        "",
+        "# Quiz 4 進階：拼接條件與 CLAHE 前處理比較", "",
+        "原始成功組：left.jpg + right.jpg；原始失敗組：failure_view1.jpg + failure_view2.jpg。",
+        "只改動成功組的右圖：亮度乘 0.70／0.40／0.20，或裁掉左側 15%／30%／45%。",
+        "這是對既有照片的模擬實驗；裁切比例不是實際視野重疊率，拍攝角度也未在此實驗中改變。",
+        "CLAHE 作用於 YCrCb 亮度通道；raw 與 clahe 使用相同的 SIFT、匹配與 RANSAC 流程。", "",
+        "| 照片組 | 條件 | 前處理 | 左/右特徵點 | 可靠匹配 | RANSAC 內點 | 內點率 | SIFT 產圖 | OpenCV 產圖 |",
+        "|---|---|---|---:|---:|---:|---:|---|---|",
     ]
-    print("\n".join(lines))
-    return lines
+    for row in records:
+        lines.append(
+            f"| {row['pair']} | {row['condition']} | {row['preprocess']} | "
+            f"{row['left_keypoints']}/{row['right_keypoints']} | {row['good_matches']} | "
+            f"{row['ransac_inliers']} | {row['inlier_ratio']:.1%} | "
+            f"{'是' if row['sift_success'] else '否'} | {'是' if row['opencv_success'] else '否'} |"
+        )
+    def first_failed(case_prefix, method, success_field):
+        for row in records:
+            if (row["pair"] == "success" and row["case"].startswith(case_prefix)
+                    and row["preprocess"] == method and not row[success_field]):
+                return row["condition"]
+        return "測試範圍內未失敗"
+
+    lines.extend([
+        "", "## 本次測試點的觀察", "",
+        f"- 不加前處理時，SIFT 在「{first_failed('brightness_', 'raw', 'sift_success')}」首次無法產圖；"
+        f"CLAHE 後的對應測試點是「{first_failed('brightness_', 'clahe', 'sift_success')}」。",
+        f"- 不加前處理時，SIFT 在「{first_failed('overlap_crop_', 'raw', 'sift_success')}」首次無法產圖；"
+        f"CLAHE 後的對應測試點是「{first_failed('overlap_crop_', 'clahe', 'sift_success')}」。",
+        "- 這些是離散測試點，不是精確的亮度或重疊臨界值。不同前處理或執行環境可能改變結果。",
+        "", "## 失敗原因與判讀", "",
+    ])
+    for row in records:
+        if not row["sift_success"] or not row["opencv_success"]:
+            lines.append(
+                f"- `{row['file_prefix']}`：SIFT {row['sift_note']}；"
+                f"OpenCV {row['opencv_note']}。"
+            )
+    lines.extend([
+        "", "特徵點或匹配數量多，不保證估計出的透視變換合理。",
+        "「產圖成功」只代表流程完成，仍須打開 panorama 圖目視檢查接縫、扭曲與重影。",
+        "若本次測試全部成功，表示尚未測到失敗臨界值，不可宣稱已找到臨界條件。",
+    ])
+    (results_dir / "summary.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    (results_dir / "summary.txt").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
 def main():
@@ -208,21 +299,25 @@ def main():
         default=project_dir / "results" / "quiz4_two_pairs"
     )
     args = parser.parse_args()
-    args.results_dir.mkdir(parents=True, exist_ok=True)
+    results_dir = args.results_dir / datetime.now().strftime("experiments_%Y%m%d_%H%M%S_%f")
+    results_dir.mkdir(parents=True, exist_ok=False)
 
-    report = ["第 60 頁：兩組照片的影像拼接比較", ""]
-    for pair in PAIRS:
-        try:
-            report.extend(process_pair(*pair, args.images_dir, args.results_dir))
-        except (FileNotFoundError, RuntimeError, cv2.error) as exc:
-            message = f"[{pair[0]}] 處理失敗：{exc}"
-            print(message)
-            report.extend([message, ""])
-    report.append("註：失敗組仍會輸出並排比較圖與可取得的匹配圖。")
-    (args.results_dir / "summary.txt").write_text(
-        "\n".join(report), encoding="utf-8"
-    )
-    print(f"結果資料夾：{args.results_dir}")
+    records = []
+    for pair_name, left_name, right_name in PAIRS:
+        left = read_image(args.images_dir / left_name)
+        right = read_image(args.images_dir / right_name)
+        cases = experiment_cases(left, right) if pair_name == "success" else [
+            ("original", "原圖（既有失敗組）", left, right)
+        ]
+        for case_name, condition, case_left, case_right in cases:
+            for method in ("raw", "clahe"):
+                records.append(process_case(
+                    pair_name, case_name, condition, method,
+                    case_left, case_right, results_dir
+                ))
+    write_reports(records, results_dir)
+    print(f"結果資料夾：{results_dir}")
+    print("請開啟 summary.md 與各 panorama 圖，目視檢查效果。")
 
 
 if __name__ == "__main__":
