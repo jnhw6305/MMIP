@@ -48,3 +48,12 @@ CLAHE 作用於 YCrCb 亮度通道；raw 與 clahe 使用相同的 SIFT、匹配
 特徵點或匹配數量多，不保證估計出的透視變換合理。
 「產圖成功」只代表流程完成，仍須打開 panorama 圖目視檢查接縫、扭曲與重影。
 若本次測試全部成功，表示尚未測到失敗臨界值，不可宣稱已找到臨界條件。
+
+## 代表性影像與目視品質
+
+- [亮度 40%、未前處理的輸入對照](evidence/success_brightness_40_raw_comparison.jpg)：右圖變暗，SIFT 未產生拼接圖。
+- [亮度 40%、CLAHE 後的輸入對照](evidence/success_brightness_40_clahe_comparison.jpg)：右圖局部對比提升。
+- [亮度 40%、CLAHE 後的 SIFT 拼接圖](evidence/success_brightness_40_clahe_sift_panorama.jpg)：流程產圖，但仍有大面積黑邊與可見接縫，不能視為高品質拼接。
+- [裁掉右圖左側 15%、CLAHE 後的 OpenCV 拼接圖](evidence/success_overlap_crop_15_clahe_opencv_panorama.jpg)：流程產圖，但邊緣仍有黑色未覆蓋區域。
+
+因此，CLAHE 在部分測試點改善了「能否產圖」的穩定性，未證明它總能改善拼接的視覺品質。
