@@ -9,8 +9,8 @@ CLAHE 作用於 YCrCb 亮度通道；raw 與 clahe 使用相同的 SIFT、匹配
 
 [failure_view1.jpg](../../Week01/Data/Quiz4/failure_view1.jpg) 與
 [failure_view2.jpg](../../Week01/Data/Quiz4/failure_view2.jpg) 的來源為
-[Facebook 貼文](https://www.facebook.com/share/p/1KWD81asy1/?mibextid=wwXIfr)。
-本作業將兩張影像作為拼接失敗案例；貼文作者及發文日期尚未核實，故不在此代填。
+川毅不動產經紀有限公司的 [Facebook 貼文](https://www.facebook.com/share/p/1KWD81asy1/?mibextid=wwXIfr)。
+本作業將兩張影像作為拼接失敗案例；發文日期尚未核實，故不在此代填。
 
 | 照片組 | 條件 | 前處理 | 左/右特徵點 | 可靠匹配 | RANSAC 內點 | 內點率 | SIFT 產圖 | OpenCV 產圖 |
 |---|---|---|---:|---:|---:|---:|---|---|
