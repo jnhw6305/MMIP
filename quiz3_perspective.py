@@ -1,6 +1,7 @@
 """Quiz 3: automatically detect corners and rectify document*.jpg/png in batches.
 
 Run: python quiz3_perspective.py
+Input: Week01/Data/Quiz3/document*.jpg/png (override with --input-dir)
 Outputs: results/quiz3_auto/*_corners.jpg, *_corrected.jpg, summary.csv
 The program never asks for mouse clicks or uses fixed corner coordinates.
 """
@@ -35,26 +36,24 @@ def save_image(path: Path, image: np.ndarray) -> None:
 def order_corners(points: np.ndarray) -> np.ndarray:
     """Return top-left, top-right, bottom-right, bottom-left."""
     points = np.asarray(points, np.float32).reshape(4, 2)
-    total = points.sum(axis=1)
-    difference = points[:, 1] - points[:, 0]
-    order = [np.argmin(total), np.argmin(difference),
-             np.argmax(total), np.argmax(difference)]
-    if len(set(order)) != 4:
-        raise ValueError("四角順序不明確")
-    return points[order]
+    top = points[np.argsort(points[:, 1])[:2]]
+    bottom = points[np.argsort(points[:, 1])[2:]]
+    top = top[np.argsort(top[:, 0])]
+    bottom = bottom[np.argsort(bottom[:, 0])]
+    return np.float32([top[0], top[1], bottom[1], bottom[0]])
 
 
 def valid_quad(quad: np.ndarray, width: int, height: int) -> bool:
     if not np.isfinite(quad).all():
         return False
-    if (quad[:, 0] < 0).any() or (quad[:, 0] >= width).any():
+    if (quad[:, 0] < 0.005 * width).any() or (quad[:, 0] >= 0.995 * width).any():
         return False
-    if (quad[:, 1] < 0).any() or (quad[:, 1] >= height).any():
+    if (quad[:, 1] < 0.005 * height).any() or (quad[:, 1] >= 0.995 * height).any():
         return False
     polygon = np.round(quad).astype(np.int32)
     area = cv2.contourArea(polygon)
     sides = np.linalg.norm(np.roll(quad, -1, axis=0) - quad, axis=1)
-    return bool(0.12 * width * height <= area <= 0.90 * width * height
+    return bool(0.12 * width * height <= area <= 0.65 * width * height
                 and cv2.isContourConvex(polygon)
                 and sides.min() >= 0.12 * min(width, height))
 
@@ -69,7 +68,7 @@ def contour_quad(edges: np.ndarray, width: int, height: int) -> np.ndarray | Non
         if cv2.contourArea(contour) < 0.12 * width * height:
             break
         perimeter = cv2.arcLength(contour, True)
-        for factor in (0.015, 0.025, 0.04, 0.06):
+        for factor in (0.015, 0.025, 0.03, 0.04, 0.06):
             polygon = cv2.approxPolyDP(contour, factor * perimeter, True)
             if len(polygon) != 4 or not cv2.isContourConvex(polygon):
                 continue
@@ -152,6 +151,32 @@ def colored_book_quad(image: np.ndarray, edges: np.ndarray) -> np.ndarray | None
     return None
 
 
+def blue_cover_quad(image: np.ndarray) -> np.ndarray | None:
+    """Find a blue/cyan cover when a complete outer edge is not visible."""
+    height, width = image.shape[:2]
+    hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+    for saturation in (18, 35, 70, 100):
+        mask = cv2.inRange(hsv, (70, saturation, 20), (135, 255, 255))
+        mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE,
+                                np.ones((25, 25), np.uint8))
+        mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN,
+                                np.ones((9, 9), np.uint8))
+        contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL,
+                                       cv2.CHAIN_APPROX_SIMPLE)
+        for contour in sorted(contours, key=cv2.contourArea, reverse=True):
+            if cv2.contourArea(contour) < 0.12 * width * height:
+                break
+            hull = cv2.convexHull(contour)
+            polygon = cv2.approxPolyDP(hull, 0.03 * cv2.arcLength(hull, True),
+                                       True)
+            if len(polygon) != 4:
+                continue
+            quad = order_corners(polygon)
+            if valid_quad(quad, width, height):
+                return quad
+    return None
+
+
 def detect_corners(image: np.ndarray) -> tuple[np.ndarray, str]:
     height, width = image.shape[:2]
     scale = min(1.0, 1000 / max(height, width))
@@ -165,6 +190,13 @@ def detect_corners(image: np.ndarray) -> tuple[np.ndarray, str]:
     quad = colored_book_quad(small, edges)
     if quad is not None:
         return quad / scale, "彩色封面與底邊"
+    softer_edges = cv2.Canny(cv2.GaussianBlur(gray, (5, 5), 0), 20, 70)
+    quad = contour_quad(softer_edges, small_width, small_height)
+    if quad is not None:
+        return quad / scale, "低門檻四邊形輪廓"
+    quad = blue_cover_quad(small)
+    if quad is not None:
+        return quad / scale, "藍色封面區域"
     raise ValueError("無法找到可信的四角；可能是邊緣不清、物件被裁切或背景干擾")
 
 
@@ -202,13 +234,15 @@ def marked_image(image: np.ndarray, quad: np.ndarray | None) -> np.ndarray:
 def main() -> None:
     project = Path(__file__).resolve().parent
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--input-dir", type=Path, default=project / "images")
+    parser.add_argument("--input-dir", type=Path,
+                        default=project / "Week01" / "Data" / "Quiz3")
     parser.add_argument("--pattern", default="document*")
     parser.add_argument("--output-dir", type=Path,
                         default=project / "results" / "quiz3_auto")
     args = parser.parse_args()
     files = sorted(path for path in args.input_dir.glob(args.pattern)
-                   if path.is_file() and path.suffix.lower() in SUFFIXES)
+                   if path.is_file() and path.suffix.lower() in SUFFIXES
+                   and not path.stem.lower().endswith(("_corners", "_corrected")))
     if not files:
         raise FileNotFoundError(f"找不到符合 {args.pattern} 的影像：{args.input_dir}")
     args.output_dir.mkdir(parents=True, exist_ok=True)
