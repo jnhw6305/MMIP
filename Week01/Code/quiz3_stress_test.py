@@ -1,7 +1,7 @@
 """Controlled image-degradation test; these are not extra real photographs.
 
 Run from the repository root:
-    python results/quiz3_advanced/stress_test.py
+    python Week01/Code/quiz3_stress_test.py
 """
 
 import csv
@@ -16,7 +16,7 @@ sys.path.insert(0, str(PROJECT / "Week01" / "Code"))
 from quiz3_perspective import detect_corners  # noqa: E402
 
 INPUT = PROJECT / "Week01" / "Data" / "Quiz3"
-OUTPUT = Path(__file__).resolve().with_name("stress.csv")
+OUTPUT = PROJECT / "Week01" / "Data" / "Quiz3" / "advanced" / "stress.csv"
 
 
 def read_image(path):

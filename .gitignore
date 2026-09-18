@@ -1,0 +1,7 @@
+# Regenerated experiment output; reviewed evidence lives in Week01/Data/*/advanced/.
+/results/
+/Week01/Data/Quiz4/results/experiments_*/
+
+# Python bytecode generated when running the quiz scripts.
+__pycache__/
+*.pyc

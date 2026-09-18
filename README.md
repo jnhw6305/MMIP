@@ -13,7 +13,7 @@
 | --- | --- | --- |
 | Quiz 1：彩色轉灰階 | [quiz1_grayscale.py](Week01/Code/quiz1_grayscale.py) | [NumPy／OpenCV 比較](Week01/Data/Quiz1/advanced/summary.md) |
 | Quiz 2：直方圖等化 | [quiz2_histogram.py](Week01/Code/quiz2_histogram.py) | [直方圖與效能比較](Week01/Data/Quiz2/advanced/summary.md) |
-| Quiz 3：透視校正 | [quiz3_perspective.py](Week01/Code/quiz3_perspective.py) | [多張實拍測試](results/quiz3_advanced/summary.md) |
-| Quiz 4：影像拼接 | [quiz4_stitching.py](Week01/Code/quiz4_stitching.py) | [條件與前處理比較](results/quiz4_advanced/summary.md) |
+| Quiz 3：透視校正 | [quiz3_perspective.py](Week01/Code/quiz3_perspective.py) | [多張實拍測試](Week01/Data/Quiz3/advanced/summary.md) |
+| Quiz 4：影像拼接 | [quiz4_stitching.py](Week01/Code/quiz4_stitching.py) | [條件與前處理比較](Week01/Data/Quiz4/advanced/summary.md) |
 
 執行環境需要 Python、NumPy 與 OpenCV。於儲存庫根目錄執行程式；詳細指令見 [Week01/Code/README.md](Week01/Code/README.md)。報告中的「成功產圖」不等於完美影像，請一併查看角點、接縫、黑邊及限制說明。

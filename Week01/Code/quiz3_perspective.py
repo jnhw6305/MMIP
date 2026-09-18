@@ -2,7 +2,7 @@
 
 Run from repository root: python Week01/Code/quiz3_perspective.py
 Input: Week01/Data/Quiz3/document*.jpg/png (override with --input-dir)
-Outputs: results/quiz3_auto/*_corners.jpg, *_corrected.jpg, summary.csv
+Default outputs: results/quiz3_auto/*_corners.jpg, *_corrected.jpg, summary.csv
 The program never asks for mouse clicks or uses fixed corner coordinates.
 """
 
