@@ -3,7 +3,7 @@
 執行方式（於儲存庫根目錄）：
 
 ```bat
-python quiz3_perspective.py --pattern "document*.jpg" --output-dir "results\quiz3_advanced"
+python Week01\Code\quiz3_perspective.py --pattern "document*.jpg" --output-dir "results\quiz3_advanced"
 python results\quiz3_advanced\stress_test.py
 ```
 

@@ -12,7 +12,7 @@ import cv2
 import numpy as np
 
 PROJECT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(PROJECT))
+sys.path.insert(0, str(PROJECT / "Week01" / "Code"))
 from quiz3_perspective import detect_corners  # noqa: E402
 
 INPUT = PROJECT / "Week01" / "Data" / "Quiz3"

@@ -1,6 +1,6 @@
 """Quiz 3: automatically detect corners and rectify document*.jpg/png in batches.
 
-Run: python quiz3_perspective.py
+Run from repository root: python Week01/Code/quiz3_perspective.py
 Input: Week01/Data/Quiz3/document*.jpg/png (override with --input-dir)
 Outputs: results/quiz3_auto/*_corners.jpg, *_corrected.jpg, summary.csv
 The program never asks for mouse clicks or uses fixed corner coordinates.
@@ -232,7 +232,7 @@ def marked_image(image: np.ndarray, quad: np.ndarray | None) -> np.ndarray:
 
 
 def main() -> None:
-    project = Path(__file__).resolve().parent
+    project = Path(__file__).resolve().parents[2]
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input-dir", type=Path,
                         default=project / "Week01" / "Data" / "Quiz3")

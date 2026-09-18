@@ -1,6 +1,6 @@
 """Quiz 2: compare NumPy and OpenCV histogram equalization.
 
-Run: python quiz2_histogram.py
+Run from repository root: python Week01/Code/quiz2_histogram.py
 The script writes exact PNG outputs, histograms, and summary.md.
 """
 
@@ -98,7 +98,7 @@ def histogram_panel(image: np.ndarray, title: str) -> np.ndarray:
 
 
 def main() -> None:
-    root = Path(__file__).resolve().parent
+    root = Path(__file__).resolve().parents[2]
     submission = root / "Week01" / "Data" / "Quiz2"
     default_input = root / "images" / "dark.jpg"
     if not default_input.exists():

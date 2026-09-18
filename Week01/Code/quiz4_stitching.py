@@ -1,6 +1,6 @@
 """Quiz 4 進階：比較亮度、重疊範圍與 CLAHE 對影像拼接的影響。
 
-執行：python quiz4_stitching.py
+從儲存庫根目錄執行：python Week01/Code/quiz4_stitching.py
 每次結果會存入 results/quiz4_two_pairs/experiments_時間戳/，不覆蓋舊結果。
 """
 
@@ -291,9 +291,10 @@ def write_reports(records, results_dir):
 
 
 def main():
-    project_dir = Path(__file__).resolve().parent
+    project_dir = Path(__file__).resolve().parents[2]
     parser = argparse.ArgumentParser()
-    parser.add_argument("--images-dir", type=Path, default=project_dir / "images")
+    parser.add_argument("--images-dir", type=Path,
+                        default=project_dir / "Week01" / "Data" / "Quiz4")
     parser.add_argument(
         "--results-dir", type=Path,
         default=project_dir / "results" / "quiz4_two_pairs"

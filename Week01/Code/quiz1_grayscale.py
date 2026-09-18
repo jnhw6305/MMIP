@@ -1,6 +1,6 @@
 """Quiz 1: compare NumPy and OpenCV colour-to-grayscale conversion.
 
-Run: python quiz1_grayscale.py
+Run from repository root: python Week01/Code/quiz1_grayscale.py
 The script writes exact PNG outputs, a comparison figure, and summary.md.
 """
 
@@ -62,7 +62,7 @@ def comparison_panel(image: np.ndarray, label: str) -> np.ndarray:
 
 
 def main() -> None:
-    root = Path(__file__).resolve().parent
+    root = Path(__file__).resolve().parents[2]
     submission = root / "Week01" / "Data" / "Quiz1"
     default_input = root / "images" / "color.jpg"
     if not default_input.exists():
