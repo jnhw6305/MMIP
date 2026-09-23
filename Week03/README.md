@@ -1,5 +1,26 @@
 # Week03：CNN 影像分類與可解釋性分析
 
+## 使用 Google Colab 開啟完整作業
+
+本週 **Quiz 1–Quiz 3 的所有基礎與進階問題**，皆已在 [MMIP_CNN完整作業.ipynb](MMIP_CNN完整作業.ipynb) 中依序回答。Notebook 包含問題定義、完整程式碼、正式訓練輸出、評估表格、圖像結果及文字分析；建議讀者直接透過 Google Colab 閱讀與執行。
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jnhw6305/MMIP/blob/main/Week03/MMIP_CNN%E5%AE%8C%E6%95%B4%E4%BD%9C%E6%A5%AD.ipynb)
+
+操作步驟：
+
+1. 點擊上方 **Open In Colab** 按鈕，在 Google Colab 開啟完整 Notebook。
+2. 登入 Google 帳號；若要重新訓練，選擇「執行階段 → 變更執行階段類型 → T4 GPU」。
+3. Notebook 已設定 `FULL_RUN=True`。如需重現正式結果，可選擇「執行階段 → 全部執行」；若只想查看作業，直接閱讀已保留的輸出即可。
+4. 依 Notebook 順序閱讀 Quiz 1、Quiz 2 與 Quiz 3；各題的基礎要求、進階實驗、圖表與結論均放在對應章節內。
+
+| Notebook 章節 | 已回答內容 |
+| --- | --- |
+| Quiz 1 | CIFAR-10 資料來源、問題定義、10 個真實事物類別、資料切分與理由 |
+| Quiz 2 基礎 | 自行設計 CNN、MobileNetV2、Testing Dataset 預測、Top-1／Top-5、混淆矩陣、ROC、Macro-AUC 與參數量比較 |
+| Quiz 2 進階 | Plain CNN 與 MobileNetV2 的超參數組合實驗及結果分析 |
+| Quiz 3 基礎 | Data Augmentation 設計、前後對照、實際結果與限制分析 |
+| Quiz 3 進階 | 兩個 CNN Kernel、activation map、Grad-CAM 正確／錯誤案例與可解釋性分析 |
+
 本週以 CIFAR-10 建立影像分類系統，任務是輸入一張 32×32 RGB 圖片，判斷圖片中的主要物體最接近飛機、汽車、鳥、貓、鹿、狗、青蛙、馬、船或卡車中的哪一類。完整程式、訓練紀錄、圖表與分析均保留在 [MMIP_CNN完整作業.ipynb](MMIP_CNN完整作業.ipynb)。
 
 ## 資料與切分
