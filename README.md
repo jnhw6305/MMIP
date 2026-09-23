@@ -37,4 +37,4 @@
 - 完成超參數組合實驗及 Data Augmentation 前後對照，並誠實分析 augmentation 未提升本次結果的原因與限制。
 - 視覺化兩個第一層 CNN Kernel、activation map，以及正確與錯誤案例的 Grad-CAM。
 
-基準實驗中，MobileNetV2 的測試 Top-1／Top-5／Macro-AUC 為 **0.8909／0.9965／0.992878**；自行設計的 Plain CNN 以 299,754 個參數取得 **0.8427** Top-1。完整程式、正式輸出與分析請見 [MMIP_CNN完整作業.ipynb](Week03/MMIP_CNN完整作業.ipynb)。
+基準實驗中，MobileNetV2 的測試 Top-1／Top-5／Macro-AUC 為 **0.8909／0.9965／0.992878**；自行設計的 Plain CNN 以 299,754 個參數取得 **0.8427** Top-1。作業導覽與 Colab 開啟方式請見 [Week03 README](Week03/README.md)；GitHub 可直接閱讀[預覽版 Notebook](Week03/MMIP_CNN完整作業.ipynb)，正式輸出則保存在[含輸出版本](Week03/MMIP_CNN完整作業_含輸出.ipynb)。
