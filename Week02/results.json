@@ -1,0 +1,136 @@
+{
+  "seed": 42,
+  "rows": 30000,
+  "features": [
+    "LIMIT_BAL",
+    "SEX",
+    "EDUCATION",
+    "MARRIAGE",
+    "AGE",
+    "PAY_0",
+    "PAY_2",
+    "PAY_3",
+    "PAY_4",
+    "PAY_5",
+    "PAY_6",
+    "BILL_AMT1",
+    "BILL_AMT2",
+    "BILL_AMT3",
+    "BILL_AMT4",
+    "BILL_AMT5",
+    "BILL_AMT6",
+    "PAY_AMT1",
+    "PAY_AMT2",
+    "PAY_AMT3",
+    "PAY_AMT4",
+    "PAY_AMT5",
+    "PAY_AMT6"
+  ],
+  "positive_rate": 0.2212,
+  "fit_size": 19200,
+  "calibration_size": 4800,
+  "validation_size": 6000,
+  "results": {
+    "Logistic regression": {
+      "threshold": 0.29,
+      "TN": 4141,
+      "FP": 532,
+      "FN": 701,
+      "TP": 626,
+      "accuracy": 0.7945,
+      "precision": 0.540587219343696,
+      "recall": 0.4717407686510927,
+      "f1": 0.5038229376257545,
+      "auc": 0.7080039883433039
+    },
+    "Random forest": {
+      "threshold": 0.28,
+      "TN": 3942,
+      "FP": 731,
+      "FN": 562,
+      "TP": 765,
+      "accuracy": 0.7845,
+      "precision": 0.5113636363636364,
+      "recall": 0.5764883195177091,
+      "f1": 0.5419766206163655,
+      "auc": 0.7710856721363132
+    },
+    "MLP baseline": {
+      "threshold": 0.23,
+      "TN": 3841,
+      "FP": 832,
+      "FN": 582,
+      "TP": 745,
+      "accuracy": 0.7643333333333333,
+      "precision": 0.4724159797083069,
+      "recall": 0.5614167294649586,
+      "f1": 0.5130853994490359,
+      "auc": 0.7691522964339548
+    },
+    "MLP improved": {
+      "threshold": 0.28,
+      "TN": 4025,
+      "FP": 648,
+      "FN": 618,
+      "TP": 709,
+      "accuracy": 0.789,
+      "precision": 0.522476050110538,
+      "recall": 0.5342878673700076,
+      "f1": 0.5283159463487332,
+      "auc": 0.7746253026291747
+    }
+  },
+  "sample": {
+    "ID": 6908,
+    "actual": 0,
+    "MLP_baseline_probability": 0.07444770634174347,
+    "MLP_improved_probability": 0.09311649948358536,
+    "MLP_improved_predicted_at_calibrated_threshold": 0
+  },
+  "quiz1_logistic_initial": {
+    "threshold": 0.5,
+    "TN": 4525,
+    "FP": 148,
+    "FN": 989,
+    "TP": 338,
+    "accuracy": 0.8105,
+    "precision": 0.6954732510288066,
+    "recall": 0.25470987189148453,
+    "f1": 0.3728626585769443,
+    "auc": 0.7080039883433039
+  },
+  "quiz1_logistic_adjusted": {
+    "threshold": 0.3,
+    "TN": 4174,
+    "FP": 499,
+    "FN": 721,
+    "TP": 606,
+    "accuracy": 0.7966666666666666,
+    "precision": 0.5484162895927602,
+    "recall": 0.4566691785983421,
+    "f1": 0.49835526315789475,
+    "auc": 0.7080039883433039
+  },
+  "quiz1_forest_initial": {
+    "threshold": 0.5,
+    "TN": 4423,
+    "FP": 250,
+    "FN": 847,
+    "TP": 480,
+    "accuracy": 0.8171666666666667,
+    "precision": 0.6575342465753424,
+    "recall": 0.3617181612660136,
+    "f1": 0.4666990763247448,
+    "auc": 0.7710856721363132
+  },
+  "baseline_last_loss": {
+    "epoch": 60.0,
+    "training_loss": 0.39899903535842896,
+    "validation_loss": 0.4440748989582062
+  },
+  "improved_last_loss": {
+    "epoch": 60.0,
+    "training_loss": 0.4156510829925537,
+    "validation_loss": 0.4330802857875824
+  }
+}
