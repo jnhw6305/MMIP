@@ -1,0 +1,3 @@
+method,index,reference,prediction,latency_seconds,bleu1,bleu4,bertscore_f1,gemini
+greedy,0,A skateboarder is jumping almost as high as a building .,a man in a blue jacket is jumping off a brick wall.,0.462824999820441,0.25,0.03986357128268015,0.880228579044342,
+beam5,0,A skateboarder is jumping almost as high as a building .,a man on a snowboard jumps over a pile of snow.,0.28756180009804666,0.0909090909090909,0.018850319022747353,0.8802178502082825,"{'score': 4, 'reason': 'The caption correctly identifies a snowboarder jumping above a large snow pile at night.'}"

@@ -1,0 +1,22 @@
+{
+  "dataset": {
+    "name": "Flickr8k",
+    "train": 2000,
+    "test": 1
+  },
+  "training_seconds": 1.90013088285923e-06,
+  "methods": {
+    "greedy": {
+      "bleu1": 0.25,
+      "bleu4": 0.03986357128268015,
+      "bertscore_f1": 0.880228579044342,
+      "latency_seconds": 0.462824999820441
+    },
+    "beam5": {
+      "bleu1": 0.0909090909090909,
+      "bleu4": 0.018850319022747353,
+      "bertscore_f1": 0.8802178502082825,
+      "latency_seconds": 0.28756180009804666
+    }
+  }
+}

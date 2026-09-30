@@ -38,3 +38,13 @@
 - 視覺化兩個第一層 CNN Kernel、activation map，以及正確與錯誤案例的 Grad-CAM。
 
 基準實驗中，MobileNetV2 的測試 Top-1／Top-5／Macro-AUC 為 **0.8909／0.9965／0.992878**；自行設計的 Plain CNN 以 299,754 個參數取得 **0.8427** Top-1。作業導覽與 Colab 開啟方式請見 [Week03 README](Week03/README.md)；GitHub 可直接閱讀[預覽版 Notebook](Week03/MMIP_CNN完整作業.ipynb)，正式輸出則保存在[含輸出版本](Week03/MMIP_CNN完整作業_含輸出.ipynb)。
+
+## Week 04：多模態深度學習實驗
+
+[Week04](Week04/README.md) 完成文字情緒分析、影像分類與影像描述實驗。
+
+- IMDb 情緒分析：比較 RNN 與 LSTM，LSTM Accuracy 與 Macro-F1 均達 0.7740。
+- CIFAR-10 影像分類：比較 Vision Transformer 與 ResNet；ViT Accuracy 為 0.9655、Macro-AUC 為 0.9988。
+- Flickr8k 影像描述：使用 BLIP 比較 greedy 與 beam search，並計算 BLEU、BERTScore 與推論延遲。
+- 使用 Gemini API 對影像描述結果進行額外語意評估。
+- 完整實驗數據請參閱 [Week04/REPORT.md](Week04/REPORT.md) 與 [Week04/results](Week04/results)。

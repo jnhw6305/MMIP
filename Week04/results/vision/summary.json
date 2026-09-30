@@ -1,0 +1,23 @@
+{
+  "dataset": {
+    "name": "CIFAR-10",
+    "train": 10000,
+    "test": 2000
+  },
+  "vit": {
+    "accuracy": 0.9655,
+    "macro_precision": 0.9658324314176461,
+    "macro_recall": 0.9649912294253591,
+    "macro_f1": 0.9652268865071907,
+    "macro_auc": 0.9988074642250465,
+    "training_seconds": 256.3731233999133
+  },
+  "resnet": {
+    "accuracy": 0.915,
+    "macro_precision": 0.9143330977714431,
+    "macro_recall": 0.9153055864986452,
+    "macro_f1": 0.9141294458125854,
+    "macro_auc": 0.996196156944823,
+    "training_seconds": 52.68514209985733
+  }
+}

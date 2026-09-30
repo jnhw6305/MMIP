@@ -1,0 +1,21 @@
+{
+  "dataset": {
+    "name": "IMDb",
+    "train": 10000,
+    "test": 2500
+  },
+  "rnn": {
+    "accuracy": 0.6156,
+    "macro_precision": 0.6169876765295784,
+    "macro_recall": 0.61587691390002,
+    "macro_f1": 0.6147848848162712,
+    "training_seconds": 5.333896900061518
+  },
+  "lstm": {
+    "accuracy": 0.774,
+    "macro_precision": 0.7740117658804826,
+    "macro_recall": 0.774017553190468,
+    "macro_f1": 0.7739996745595314,
+    "training_seconds": 6.045906399842352
+  }
+}
