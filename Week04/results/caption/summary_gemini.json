@@ -1,0 +1,9 @@
+{
+  "expected": 200,
+  "attempted": 200,
+  "successful": 200,
+  "failed": 0,
+  "mean_score": 3.555,
+  "model": "gemini-3.7-flash",
+  "evaluation_mode": "batched"
+}
