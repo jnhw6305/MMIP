@@ -48,3 +48,13 @@
 - Flickr8k 影像描述：使用 BLIP 比較 greedy 與 beam search，並計算 BLEU、BERTScore 與推論延遲。
 - 使用 Gemini API 對影像描述結果進行額外語意評估。
 - 完整實驗數據請參閱 [Week04/REPORT.md](Week04/REPORT.md) 與 [Week04/results](Week04/results)。
+
+## 第五週導覽
+
+[Week05：多模態深度學習神經網路](Week05/README.md) 完成影像檢索、影像與文字融合分類，以及 CLIP Image Captioning：
+
+- CIFAR-10 影像檢索：比較 ResNet-18 與 ViT-Tiny 的 embedding，ViT-Tiny Recall@1／mAP@10 為 **0.8975／0.8698**。
+- MM-IMDb 多模態分類：融合電影海報與劇情文字；ViT-Base＋DistilBERT 的 Micro-F1／Macro-F1 為 **0.5857／0.5480**。
+- Flickr8k Image Captioning：以 CLIP ViT-B/32 作 Image Encoder、GPT-2 作文字 Decoder，計算 BLEU 與 BERTScore。
+- 與 Week 4 BLIP 比較後，CLIP-GPT2 表現較低，說明 image-text alignment 與跨模態生成式預訓練的重要性。
+- 三份 notebook 均包含正式訓練輸出、指標比較、視覺化推論與完整實驗結論，詳見 [Week05 作業總覽](Week05/README.md)。
