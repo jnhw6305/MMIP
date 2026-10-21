@@ -1,0 +1,218 @@
+{
+  "dataset": {
+    "rows": 30000,
+    "features": 23,
+    "default_rate": 0.2212
+  },
+  "split": {
+    "train": 19200,
+    "calibration": 4800,
+    "test": 6000
+  },
+  "synthetic": {
+    "method": "Conditional bootstrap with bounded monetary jitter",
+    "rows": 3804,
+    "minority_before": 0.2212,
+    "minority_after": 0.35,
+    "mean_ks": 0.0952,
+    "max_ks": 0.1574,
+    "correlation_mae": 0.0257,
+    "exact_match_rate": 0.0
+  },
+  "experiments": [
+    {
+      "name": "Week02 RF baseline",
+      "threshold": 0.44,
+      "accuracy": 0.7922,
+      "precision": 0.5293,
+      "recall": 0.5441,
+      "f1": 0.5366,
+      "roc_auc": 0.7722,
+      "pr_auc": 0.5512,
+      "tn": 4031,
+      "fp": 642,
+      "fn": 605,
+      "tp": 722
+    },
+    {
+      "name": "RF + time features",
+      "threshold": 0.45,
+      "accuracy": 0.7957,
+      "precision": 0.5381,
+      "recall": 0.5373,
+      "f1": 0.5377,
+      "roc_auc": 0.7727,
+      "pr_auc": 0.5506,
+      "tn": 4061,
+      "fp": 612,
+      "fn": 614,
+      "tp": 713
+    },
+    {
+      "name": "RF + synthetic data",
+      "threshold": 0.43,
+      "accuracy": 0.7842,
+      "precision": 0.5107,
+      "recall": 0.5735,
+      "f1": 0.5403,
+      "roc_auc": 0.7715,
+      "pr_auc": 0.5447,
+      "tn": 3944,
+      "fp": 729,
+      "fn": 566,
+      "tp": 761
+    },
+    {
+      "name": "RF + time + synthetic",
+      "threshold": 0.46,
+      "accuracy": 0.7908,
+      "precision": 0.5262,
+      "recall": 0.5456,
+      "f1": 0.5357,
+      "roc_auc": 0.7725,
+      "pr_auc": 0.5476,
+      "tn": 4021,
+      "fp": 652,
+      "fn": 603,
+      "tp": 724
+    }
+  ],
+  "feature_importance": {
+    "Week02 RF baseline": [
+      {
+        "feature": "X6",
+        "importance": 0.1349
+      },
+      {
+        "feature": "X12",
+        "importance": 0.0598
+      },
+      {
+        "feature": "X1",
+        "importance": 0.0572
+      },
+      {
+        "feature": "X18",
+        "importance": 0.0524
+      },
+      {
+        "feature": "X7",
+        "importance": 0.052
+      },
+      {
+        "feature": "X19",
+        "importance": 0.0514
+      },
+      {
+        "feature": "X13",
+        "importance": 0.0508
+      },
+      {
+        "feature": "X5",
+        "importance": 0.0475
+      }
+    ],
+    "RF + time features": [
+      {
+        "feature": "X6",
+        "importance": 0.0692
+      },
+      {
+        "feature": "TS_delinquency_count",
+        "importance": 0.069
+      },
+      {
+        "feature": "TS_max_delinquency",
+        "importance": 0.0455
+      },
+      {
+        "feature": "TS_avg_utilization",
+        "importance": 0.0449
+      },
+      {
+        "feature": "TS_bill_volatility",
+        "importance": 0.0415
+      },
+      {
+        "feature": "TS_avg_payment_ratio",
+        "importance": 0.0385
+      },
+      {
+        "feature": "TS_recent_bill_vs_avg",
+        "importance": 0.0357
+      },
+      {
+        "feature": "TS_payment_slope",
+        "importance": 0.0347
+      }
+    ],
+    "RF + synthetic data": [
+      {
+        "feature": "X6",
+        "importance": 0.1277
+      },
+      {
+        "feature": "X1",
+        "importance": 0.0697
+      },
+      {
+        "feature": "X12",
+        "importance": 0.0556
+      },
+      {
+        "feature": "X15",
+        "importance": 0.0507
+      },
+      {
+        "feature": "X18",
+        "importance": 0.0505
+      },
+      {
+        "feature": "X7",
+        "importance": 0.0498
+      },
+      {
+        "feature": "X13",
+        "importance": 0.0497
+      },
+      {
+        "feature": "X17",
+        "importance": 0.0496
+      }
+    ],
+    "RF + time + synthetic": [
+      {
+        "feature": "TS_delinquency_count",
+        "importance": 0.0695
+      },
+      {
+        "feature": "X6",
+        "importance": 0.0662
+      },
+      {
+        "feature": "TS_max_delinquency",
+        "importance": 0.0486
+      },
+      {
+        "feature": "TS_avg_utilization",
+        "importance": 0.0416
+      },
+      {
+        "feature": "TS_avg_payment_ratio",
+        "importance": 0.0412
+      },
+      {
+        "feature": "X1",
+        "importance": 0.0405
+      },
+      {
+        "feature": "TS_bill_volatility",
+        "importance": 0.0381
+      },
+      {
+        "feature": "X12",
+        "importance": 0.0332
+      }
+    ]
+  }
+}
