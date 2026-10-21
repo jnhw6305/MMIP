@@ -13,7 +13,7 @@ monthLabels.forEach((label) => {
   row.innerHTML = `<th>${label}</th>
     <td><input class="delay-input" type="number" min="-2" max="8" value="0" aria-label="${label}延遲狀態" required></td>
     <td><input class="bill-input" type="number" min="-100000" max="2000000" step="1000" value="40000" aria-label="${label}帳單金額" required></td>
-    <td><input class="paid-input" type="number" min="0" max="2000000" step="1000" value="5000" aria-label="${label}實際付款" required></td>`;
+    <td><input class="paid-input" type="number" min="0" max="2000000" step="100" value="5000" aria-label="${label}實際付款" required></td>`;
   tbody.appendChild(row);
 });
 
