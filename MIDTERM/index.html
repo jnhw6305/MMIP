@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CreditGuard-TS：結合時間序列與統計合成資料的信用卡違約預警系統期中專案簡述。">
+  <title>CreditGuard-TS｜期中專案簡述</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="predictor.css">
+  <link rel="stylesheet" href="evidence.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="回到首頁">
+      <span class="brand-mark">C</span><span>CreditGuard<span class="accent">.TS</span></span>
+    </a>
+    <nav aria-label="主要導覽">
+      <a href="#problem">研究問題</a><a href="#data">資料</a><a href="#architecture">架構</a><a href="#evidence">實驗成果</a>
+    </nav>
+    <a class="pill" href="#demo">互動示意 ↘</a>
+  </header>
+
+  <main id="top">
+    <section class="hero section">
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span></span> MID-TERM PROJECT · DISCRIMINATIVE AI</div>
+        <h1>讓信用風險<br><em>提早被看見。</em></h1>
+        <p class="lead">結合時間序列分析與統計合成資料，從客戶過去六個月的還款軌跡，預測下一期信用卡違約風險。</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#architecture">查看技術架構</a>
+          <a class="btn secondary" href="#scope">專案範圍</a>
+        </div>
+        <div class="hero-meta">
+          <div><strong>6</strong><span>個月行為序列</span></div>
+          <div><strong>3</strong><span>組模型比較</span></div>
+          <div><strong>1</strong><span>個可操作網頁</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal" aria-label="風險趨勢示意圖">
+        <div class="terminal-head"><span></span><span></span><span></span><b>LIVE RISK SIGNAL</b></div>
+        <div class="risk-card">
+          <div class="risk-label"><span>預測風險</span><span class="live-dot">即時示意</span></div>
+          <div class="score"><span id="heroScore">72</span><small>%</small></div>
+          <div class="risk-status">HIGH RISK <i>↗</i></div>
+          <svg class="sparkline" viewBox="0 0 560 190" role="img" aria-label="最近六個月風險上升折線圖">
+            <defs><linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#00e6a8" stop-opacity=".35"/><stop offset="1" stop-color="#00e6a8" stop-opacity="0"/></linearGradient></defs>
+            <path class="gridline" d="M0 45H560M0 95H560M0 145H560"/>
+            <path class="area" d="M10 146 C80 135,90 141,120 125 S195 115,220 103 S295 96,330 74 S415 58,455 42 S515 28,550 18 V190 H10Z"/>
+            <path class="line" d="M10 146 C80 135,90 141,120 125 S195 115,220 103 S295 96,330 74 S415 58,455 42 S515 28,550 18"/>
+            <g class="dots"><circle cx="10" cy="146" r="5"/><circle cx="120" cy="125" r="5"/><circle cx="220" cy="103" r="5"/><circle cx="330" cy="74" r="5"/><circle cx="455" cy="42" r="5"/><circle cx="550" cy="18" r="6"/></g>
+          </svg>
+          <div class="months"><span>M-5</span><span>M-4</span><span>M-3</span><span>M-2</span><span>M-1</span><span>NOW</span></div>
+          <div class="signal-row"><span>帳單使用率 <b>↑</b></span><span>付款比例 <b>↓</b></span><span>延遲月數 <b>↑</b></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ticker" aria-label="專案技術摘要"><div>PYTORCH <i>✦</i> TIME SERIES <i>✦</i> SYNTHETIC DATA <i>✦</i> RANDOM FOREST <i>✦</i> LSTM / GRU <i>✦</i> FASTAPI <i>✦</i> EXPLAINABLE AI</div></section>
+
+    <section class="section intro" id="problem">
+      <div class="section-num">01 / PROBLEM</div>
+      <div class="intro-title reveal"><h2>不只看「現在」，<br>而是理解風險如何形成。</h2></div>
+      <div class="intro-text reveal">
+        <p>傳統單點分類忽略了帳單、付款與延遲狀態的變化。本專案把六個月資料重組為時間序列，辨識「帳單持續增加、付款比例下降、延遲程度惡化」等風險軌跡。</p>
+        <div class="question">核心研究問題<span>加入時間特徵與統計合成資料後，能否提升模型辨識違約客戶的 Recall 與 F1-score？</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="data">
+      <div class="section-heading"><div><div class="section-num">02 / DATASET</div><h2>資料不是更多，<br>而是更有結構。</h2></div><p>以公開、匿名化的信用卡違約資料為基礎，保留真實測試集，僅在訓練階段產生合成樣本。</p></div>
+      <div class="data-grid">
+        <article class="data-card reveal"><span class="tag">STATIC</span><h3>客戶基本特徵</h3><p>信用額度、年齡與匿名化人口統計欄位，作為風險背景資訊。</p><div class="mini-bars"><i style="--w:82%"></i><i style="--w:61%"></i><i style="--w:38%"></i></div></article>
+        <article class="data-card featured reveal"><span class="tag">SEQUENCE</span><h3>六個月行為軌跡</h3><p>每月帳單金額、付款金額與延遲狀態，轉換成 <b>6 × 3</b> 時間序列。</p><div class="sequence"><span>月 1</span><i></i><span>月 2</span><i></i><span>···</span><i></i><span>月 6</span></div></article>
+        <article class="data-card reveal"><span class="tag">SYNTHETIC</span><h3>統計合成樣本</h3><p>分層 Bootstrap 加入小幅擾動，補足少數違約類別並維持分布特性。</p><div class="venn"><i></i><i></i><b>≈</b></div></article>
+      </div>
+      <div class="validation reveal"><strong>合成資料如何驗證？</strong><span>分布</span><b>KS / Wasserstein</b><span>關係</span><b>相關矩陣</b><span>時序</span><b>自相關 / 轉移矩陣</b><span>效用</span><b>真實測試集表現</b></div>
+    </section>
+
+    <section class="section dark-panel" id="architecture">
+      <div class="section-heading light"><div><div class="section-num">03 / ARCHITECTURE</div><h2>從原始資料到<br>可解釋的預警。</h2></div><p>先切分資料，再以訓練集建立合成樣本，避免測試資訊滲入模型。</p></div>
+      <div class="pipeline reveal">
+        <div class="node"><small>01</small><b>公開資料</b><span>表格＋月度欄位</span></div><i>→</i>
+        <div class="node"><small>02</small><b>清理與切分</b><span>Train / Val / Test</span></div><i>→</i>
+        <div class="node split"><small>03</small><b>雙軌處理</b><span>時間特徵</span><span>合成資料</span></div><i>→</i>
+        <div class="node"><small>04</small><b>模型訓練</b><span>RF / LSTM / GRU</span></div><i>→</i>
+        <div class="node active"><small>05</small><b>風險預警</b><span>機率＋解釋</span></div>
+      </div>
+      <div class="model-compare">
+        <article><div class="model-id">A</div><h3>Baseline</h3><p>Logistic Regression</p><span>原始表格特徵</span></article>
+        <article><div class="model-id">B</div><h3>Feature Model</h3><p>Random Forest</p><span>表格＋人工時間特徵</span></article>
+        <article><div class="model-id">C</div><h3>Sequence Model</h3><p>LSTM / GRU</p><span>六個月行為序列</span></article>
+      </div>
+    </section>
+
+    <section class="section" id="demo">
+      <div class="section-heading"><div><div class="section-num">04 / LIVE MODEL</div><h2>輸入六個月資料，<br>取得實際模型判斷。</h2></div><p>本工具載入以 UCI 30,000 筆資料訓練的 Logistic Regression 基準模型；所有運算都在瀏覽器內完成，輸入不會上傳。</p></div>
+      <div class="predictor reveal">
+        <form id="riskForm" class="input-panel">
+          <div class="form-head"><div><span>CLIENT INPUT</span><h3>客戶資料</h3></div><div class="form-actions"><button type="button" id="safeSample">低風險範例</button><button type="button" id="riskSample">高風險範例</button></div></div>
+          <div class="basic-fields">
+            <label>信用額度（新臺幣）<input id="limit" type="number" min="10000" max="1000000" step="10000" value="150000" required></label>
+            <label>年齡<input id="age" type="number" min="18" max="100" value="35" required></label>
+          </div>
+          <div class="table-wrap"><table class="month-table"><thead><tr><th>月份</th><th>延遲狀態</th><th>帳單金額</th><th>實際付款</th></tr></thead><tbody id="monthRows"></tbody></table></div>
+          <div class="delay-help"><b>延遲狀態：</b>−2／−1＝無消費或正常，0＝循環信用，1＝延遲 1 個月，依此類推。</div>
+          <button class="predict-btn" type="submit">執行違約風險判斷 <span>→</span></button>
+          <p id="formError" class="form-error" role="alert"></p>
+        </form>
+        <aside class="result-card live-result" aria-live="polite">
+          <div class="result-top"><span>MODEL RESULT</span><span>LOGISTIC REGRESSION</span></div>
+          <div class="gauge" id="gauge" style="--score:0"><div><strong id="riskScore">—</strong><span>違約機率</span></div></div>
+          <div id="resultBadge" class="result-badge waiting">等待輸入</div>
+          <h3 id="riskText">填寫資料後執行判斷</h3>
+          <p id="resultExplain" class="result-explain">系統會顯示預測機率，以及對此次結果影響最大的三個因素。</p>
+          <div class="input-trend"><span>此次輸入的六個月趨勢</span><svg id="inputTrend" viewBox="0 0 420 110" role="img" aria-label="輸入資料的六個月帳單與付款趨勢"><path class="trend-grid" d="M0 20H420M0 55H420M0 90H420"/><polyline id="billTrend" points=""/><polyline id="paidTrend" points=""/></svg><div><i class="bill-key"></i>帳單 <i class="paid-key"></i>付款</div></div>
+          <div id="drivers" class="driver-list"></div>
+          <div class="model-stats"><span>TEST ROC-AUC <b>0.707</b></span><span>RECALL <b>0.431</b></span><span>F1 <b>0.494</b></span></div>
+          <p class="disclaimer">研究與教學用途，不構成授信決策或金融建議。模型表現來自固定測試集，個別預測仍可能錯誤。</p>
+        </aside>
+      </div>
+      <div class="privacy-note"><span>LOCAL-FIRST</span><b>隱私設計</b><p>模型參數隨網頁載入，資料僅存在目前瀏覽器頁面，不寫入伺服器或資料庫。</p><a href="https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients" target="_blank" rel="noreferrer">查看 UCI 資料來源 ↗</a></div>
+    </section>
+
+    <section class="section evidence" id="evidence">
+      <div class="section-heading"><div><div class="section-num">05 / VERIFIED RESULTS</div><h2>從 Week02 出發，<br>用實驗回答問題。</h2></div><p>以下不是預期數字，而是固定隨機種子 42、19,200／4,800／6,000 分層切分後的真實測試結果。</p></div>
+
+      <div class="result-block week02-block reveal">
+        <div class="result-block-head"><div><span>COURSE WORK REUSED</span><h3>MMIP Week02 既有成果</h3></div><a href="https://github.com/jnhw6305/MMIP/blob/main/Week02/README.md" target="_blank" rel="noreferrer">查看 GitHub 作業 ↗</a></div>
+        <div class="metric-row"><div><span>Random Forest AUC</span><b>0.7711</b></div><div><span>RF Recall</span><b>0.5765</b></div><div><span>RF F1</span><b>0.5420</b></div><div><span>Improved MLP AUC</span><b>0.7746</b></div></div>
+        <p>沿用作業中的資料清理、StandardScaler、Logistic Regression、Random Forest、PyTorch MLP、Dropout、L2、門檻校準、ROC/AUC 與混淆矩陣，作為本次延伸實驗的技術基礎。</p>
+      </div>
+
+      <div class="experiment-table-wrap reveal">
+        <div class="table-title"><span>ABLATION STUDY</span><h3>時間特徵與合成資料消融實驗</h3></div>
+        <table class="experiment-table">
+          <thead><tr><th>模型／訓練資料</th><th>Threshold</th><th>Accuracy</th><th>Recall</th><th>F1</th><th>ROC-AUC</th><th>PR-AUC</th><th>FN</th></tr></thead>
+          <tbody>
+            <tr><th>RF 重現基準</th><td>0.44</td><td>0.7922</td><td>0.5441</td><td>0.5366</td><td>0.7722</td><td>0.5512</td><td>605</td></tr>
+            <tr><th>RF＋時間特徵</th><td>0.45</td><td class="gain">0.7957</td><td>0.5373</td><td class="gain">0.5377</td><td class="gain">0.7727</td><td>0.5506</td><td>614</td></tr>
+            <tr class="best"><th>RF＋合成資料 <span>最佳 Recall</span></th><td>0.43</td><td>0.7842</td><td class="gain">0.5735</td><td class="gain">0.5403</td><td>0.7715</td><td>0.5447</td><td class="gain">566</td></tr>
+            <tr><th>RF＋時間＋合成</th><td>0.46</td><td>0.7908</td><td>0.5456</td><td>0.5357</td><td>0.7725</td><td>0.5476</td><td>603</td></tr>
+          </tbody>
+        </table>
+        <p class="table-note">綠色表示相對重現基準改善。合成資料提高違約偵測率並減少 39 筆漏判，但產生更多誤報，因此 Accuracy 與 PR-AUC 並未同步提升。</p>
+      </div>
+
+      <div class="finding-grid">
+        <article class="finding reveal"><span>TIME SERIES</span><h3>時間特徵有訊號，提升幅度有限</h3><div class="delta neutral">F1 <b>+0.0011</b></div><p>連續延遲次數成為重要特徵，但六個月序列較短，未明顯超越原始欄位。</p><div class="feature-bars"><label>連續延遲次數<i style="--v:100%"></i></label><label>最高延遲程度<i style="--v:66%"></i></label><label>平均使用率<i style="--v:65%"></i></label><label>帳單波動度<i style="--v:60%"></i></label></div></article>
+        <article class="finding highlight reveal"><span>SYNTHETIC DATA</span><h3>少數類別偵測改善，但存在取捨</h3><div class="delta">Recall <b>+0.0294</b></div><p>增加 3,804 筆合成違約樣本後，漏判由 605 降至 566；同時誤報增加，不能只宣稱全面提升。</p><div class="before-after"><div><span>BEFORE</span><b>605</b><small>漏判 FN</small></div><i>→</i><div><span>AFTER</span><b>566</b><small>漏判 FN</small></div></div></article>
+      </div>
+
+      <div class="quality-panel reveal"><div><span>SYNTHETIC QUALITY CHECK</span><h3>合成資料是否仍像真實資料？</h3></div><div class="quality-metrics"><div><b>3,804</b><span>合成樣本</span></div><div><b>22.12% → 35%</b><span>違約比例</span></div><div><b>0.0952</b><span>平均 KS</span></div><div><b>0.0257</b><span>相關矩陣 MAE</span></div><div><b>0%</b><span>完全重複率</span></div></div><p>採 Conditional Bootstrap，僅對訓練集中違約客戶進行有放回抽樣，並對金額與年齡加入分位數限制的微量擾動；校準集及測試集不參與生成。</p></div>
+    </section>
+
+    <section class="section" id="outcomes">
+      <div class="section-heading"><div><div class="section-num">06 / OUTCOMES</div><h2>完成的成果與<br>誠實面對的限制。</h2></div></div>
+      <div class="outcome-grid">
+        <div class="outcome-card good reveal"><span>COMPLETED</span><h3>目前成果</h3><ul><li>可操作的違約風險預警網頁</li><li>四組 Random Forest 消融實驗</li><li>十項六個月時間統計特徵</li><li>3,804 筆統計合成違約資料</li><li>Recall、F1、PR-AUC 與混淆矩陣</li></ul></div>
+        <div class="outcome-card warn reveal"><span>LIMITATIONS</span><h3>可能限制</h3><ul><li>僅六個月，長期趨勢有限</li><li>合成資料可能放大原始偏差</li><li>類別不平衡使 Accuracy 誤導</li><li>LSTM 不一定優於表格模型</li><li>教學成果不可直接用於授信決策</li></ul></div>
+      </div>
+    </section>
+
+    <section class="section scope" id="scope">
+      <div><div class="section-num">07 / DEVELOPMENT PLAN</div><h2>先完成可信的最小系統，<br><em>再增加模型複雜度。</em></h2></div>
+      <ol><li><span>STEP 01</span><b>Baseline</b><p>資料清理、Logistic Regression、Random Forest。</p></li><li><span>STEP 02</span><b>Time series</b><p>建立趨勢特徵，加入 LSTM／GRU 比較。</p></li><li><span>STEP 03</span><b>Synthetic data</b><p>Bootstrap／Copula 與統計相似度驗證。</p></li><li><span>STEP 04</span><b>Web demo</b><p>FastAPI 推論服務與前端風險視覺化。</p></li></ol>
+    </section>
+  </main>
+
+  <footer><div class="brand"><span class="brand-mark">C</span><span>CreditGuard<span class="accent">.TS</span></span></div><p>MMIP Mid-Term Project · Discriminative AI System</p><a href="#top">BACK TO TOP ↑</a></footer>
+  <script src="script.js"></script>
+</body>
+</html>
+
