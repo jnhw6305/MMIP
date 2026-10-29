@@ -1,0 +1,162 @@
+[
+  {
+    "id": "color_01",
+    "category": "color",
+    "image": "vlm_benchmark_images/color_01.png",
+    "question": "What color is the circle? Answer with one lowercase English word.",
+    "answer": "red",
+    "grader": "exact"
+  },
+  {
+    "id": "color_02",
+    "category": "color",
+    "image": "vlm_benchmark_images/color_02.png",
+    "question": "What color is the square? Answer with one lowercase English word.",
+    "answer": "blue",
+    "grader": "exact"
+  },
+  {
+    "id": "shape_01",
+    "category": "shape",
+    "image": "vlm_benchmark_images/shape_01.png",
+    "question": "What shape is shown? Answer circle, square, or triangle.",
+    "answer": "triangle",
+    "grader": "exact"
+  },
+  {
+    "id": "shape_02",
+    "category": "shape",
+    "image": "vlm_benchmark_images/shape_02.png",
+    "question": "What shape is shown? Answer circle, square, or triangle.",
+    "answer": "square",
+    "grader": "exact"
+  },
+  {
+    "id": "count_01",
+    "category": "counting",
+    "image": "vlm_benchmark_images/count_01.png",
+    "question": "How many red circles are shown? Answer with a digit only.",
+    "answer": "3",
+    "grader": "exact"
+  },
+  {
+    "id": "count_02",
+    "category": "counting",
+    "image": "vlm_benchmark_images/count_02.png",
+    "question": "How many blue squares are shown? Answer with a digit only.",
+    "answer": "4",
+    "grader": "exact"
+  },
+  {
+    "id": "count_03",
+    "category": "counting",
+    "image": "vlm_benchmark_images/count_03.png",
+    "question": "How many green triangles are shown? Answer with a digit only.",
+    "answer": "2",
+    "grader": "exact"
+  },
+  {
+    "id": "position_01",
+    "category": "spatial",
+    "image": "vlm_benchmark_images/position_01.png",
+    "question": "Is the red circle left or right of the blue square? Answer left or right.",
+    "answer": "left",
+    "grader": "exact"
+  },
+  {
+    "id": "position_02",
+    "category": "spatial",
+    "image": "vlm_benchmark_images/position_02.png",
+    "question": "Is the yellow triangle above or below the purple circle? Answer above or below.",
+    "answer": "above",
+    "grader": "exact"
+  },
+  {
+    "id": "compare_01",
+    "category": "comparison",
+    "image": "vlm_benchmark_images/compare_01.png",
+    "question": "Which shape is larger, circle or square? Answer circle or square.",
+    "answer": "circle",
+    "grader": "exact"
+  },
+  {
+    "id": "ocr_01",
+    "category": "ocr",
+    "image": "vlm_benchmark_images/ocr_01.png",
+    "question": "Read the text and number. Answer exactly.",
+    "answer": "HELLO 27",
+    "grader": "exact"
+  },
+  {
+    "id": "ocr_02",
+    "category": "ocr",
+    "image": "vlm_benchmark_images/ocr_02.png",
+    "question": "What does the sign say? Answer exactly.",
+    "answer": "OPEN 09:30",
+    "grader": "exact"
+  },
+  {
+    "id": "ocr_03",
+    "category": "ocr",
+    "image": "vlm_benchmark_images/ocr_03.png",
+    "question": "Read the room label. Answer exactly.",
+    "answer": "ROOM B12",
+    "grader": "exact"
+  },
+  {
+    "id": "chart_01",
+    "category": "chart",
+    "image": "vlm_benchmark_images/chart_01.png",
+    "question": "Which bar is tallest? Answer A, B, or C.",
+    "answer": "B",
+    "grader": "exact"
+  },
+  {
+    "id": "chart_02",
+    "category": "chart",
+    "image": "vlm_benchmark_images/chart_02.png",
+    "question": "Which bar is shortest? Answer X, Y, or Z.",
+    "answer": "Y",
+    "grader": "exact"
+  },
+  {
+    "id": "mixed_01",
+    "category": "mixed",
+    "image": "vlm_benchmark_images/mixed_01.png",
+    "question": "How many different shapes are present? Answer with a digit only.",
+    "answer": "3",
+    "grader": "exact"
+  },
+  {
+    "id": "mixed_02",
+    "category": "mixed",
+    "image": "vlm_benchmark_images/mixed_02.png",
+    "question": "Are the two shapes the same type? Answer yes or no.",
+    "answer": "yes",
+    "grader": "exact"
+  },
+  {
+    "id": "mixed_03",
+    "category": "mixed",
+    "image": "vlm_benchmark_images/mixed_03.png",
+    "question": "How many red shapes are present? Answer with a digit only.",
+    "answer": "2",
+    "grader": "exact"
+  },
+  {
+    "id": "mixed_04",
+    "category": "mixed",
+    "image": "vlm_benchmark_images/mixed_04.png",
+    "question": "What color is the triangle? Answer with one lowercase English word.",
+    "answer": "orange",
+    "grader": "exact"
+  },
+  {
+    "id": "mixed_05",
+    "category": "mixed",
+    "image": "vlm_benchmark_images/mixed_05.png",
+    "question": "What shape is yellow? Answer circle or square.",
+    "answer": "square",
+    "grader": "exact"
+  }
+]

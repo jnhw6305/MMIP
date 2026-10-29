@@ -1,0 +1,502 @@
+[
+  {
+    "id": "general_001",
+    "prompt": "只輸出數字：11 + 3 = ?",
+    "answer": "14"
+  },
+  {
+    "id": "general_002",
+    "prompt": "只輸出數字：18 + 14 = ?",
+    "answer": "32"
+  },
+  {
+    "id": "general_003",
+    "prompt": "只輸出數字：25 + 25 = ?",
+    "answer": "50"
+  },
+  {
+    "id": "general_004",
+    "prompt": "只輸出數字：32 + 36 = ?",
+    "answer": "68"
+  },
+  {
+    "id": "general_005",
+    "prompt": "只輸出數字：39 + 10 = ?",
+    "answer": "49"
+  },
+  {
+    "id": "general_006",
+    "prompt": "只輸出數字：46 + 21 = ?",
+    "answer": "67"
+  },
+  {
+    "id": "general_007",
+    "prompt": "只輸出數字：53 + 32 = ?",
+    "answer": "85"
+  },
+  {
+    "id": "general_008",
+    "prompt": "只輸出數字：60 + 6 = ?",
+    "answer": "66"
+  },
+  {
+    "id": "general_009",
+    "prompt": "只輸出數字：67 + 17 = ?",
+    "answer": "84"
+  },
+  {
+    "id": "general_010",
+    "prompt": "只輸出數字：74 + 28 = ?",
+    "answer": "102"
+  },
+  {
+    "id": "general_011",
+    "prompt": "只輸出數字：81 + 39 = ?",
+    "answer": "120"
+  },
+  {
+    "id": "general_012",
+    "prompt": "只輸出數字：88 + 13 = ?",
+    "answer": "101"
+  },
+  {
+    "id": "general_013",
+    "prompt": "只輸出數字：16 + 24 = ?",
+    "answer": "40"
+  },
+  {
+    "id": "general_014",
+    "prompt": "只輸出數字：23 + 35 = ?",
+    "answer": "58"
+  },
+  {
+    "id": "general_015",
+    "prompt": "只輸出數字：30 + 9 = ?",
+    "answer": "39"
+  },
+  {
+    "id": "general_016",
+    "prompt": "只輸出數字：37 + 20 = ?",
+    "answer": "57"
+  },
+  {
+    "id": "general_017",
+    "prompt": "只輸出數字：44 + 31 = ?",
+    "answer": "75"
+  },
+  {
+    "id": "general_018",
+    "prompt": "只輸出數字：51 + 5 = ?",
+    "answer": "56"
+  },
+  {
+    "id": "general_019",
+    "prompt": "只輸出數字：58 + 16 = ?",
+    "answer": "74"
+  },
+  {
+    "id": "general_020",
+    "prompt": "只輸出數字：65 + 27 = ?",
+    "answer": "92"
+  },
+  {
+    "id": "general_021",
+    "prompt": "只輸出數字：72 + 38 = ?",
+    "answer": "110"
+  },
+  {
+    "id": "general_022",
+    "prompt": "只輸出數字：79 + 12 = ?",
+    "answer": "91"
+  },
+  {
+    "id": "general_023",
+    "prompt": "只輸出數字：86 + 23 = ?",
+    "answer": "109"
+  },
+  {
+    "id": "general_024",
+    "prompt": "只輸出數字：14 + 34 = ?",
+    "answer": "48"
+  },
+  {
+    "id": "general_025",
+    "prompt": "只輸出數字：21 + 8 = ?",
+    "answer": "29"
+  },
+  {
+    "id": "general_026",
+    "prompt": "只輸出數字：28 + 19 = ?",
+    "answer": "47"
+  },
+  {
+    "id": "general_027",
+    "prompt": "只輸出數字：35 + 30 = ?",
+    "answer": "65"
+  },
+  {
+    "id": "general_028",
+    "prompt": "只輸出數字：42 + 4 = ?",
+    "answer": "46"
+  },
+  {
+    "id": "general_029",
+    "prompt": "只輸出數字：49 + 15 = ?",
+    "answer": "64"
+  },
+  {
+    "id": "general_030",
+    "prompt": "只輸出數字：56 + 26 = ?",
+    "answer": "82"
+  },
+  {
+    "id": "general_031",
+    "prompt": "只輸出數字：63 + 37 = ?",
+    "answer": "100"
+  },
+  {
+    "id": "general_032",
+    "prompt": "只輸出數字：70 + 11 = ?",
+    "answer": "81"
+  },
+  {
+    "id": "general_033",
+    "prompt": "只輸出數字：77 + 22 = ?",
+    "answer": "99"
+  },
+  {
+    "id": "general_034",
+    "prompt": "只輸出數字：84 + 33 = ?",
+    "answer": "117"
+  },
+  {
+    "id": "general_035",
+    "prompt": "只輸出數字：12 + 7 = ?",
+    "answer": "19"
+  },
+  {
+    "id": "general_036",
+    "prompt": "只輸出數字：19 + 18 = ?",
+    "answer": "37"
+  },
+  {
+    "id": "general_037",
+    "prompt": "只輸出數字：26 + 29 = ?",
+    "answer": "55"
+  },
+  {
+    "id": "general_038",
+    "prompt": "只輸出數字：33 + 3 = ?",
+    "answer": "36"
+  },
+  {
+    "id": "general_039",
+    "prompt": "只輸出數字：40 + 14 = ?",
+    "answer": "54"
+  },
+  {
+    "id": "general_040",
+    "prompt": "只輸出數字：47 + 25 = ?",
+    "answer": "72"
+  },
+  {
+    "id": "general_041",
+    "prompt": "只輸出數字：54 + 36 = ?",
+    "answer": "90"
+  },
+  {
+    "id": "general_042",
+    "prompt": "只輸出數字：61 + 10 = ?",
+    "answer": "71"
+  },
+  {
+    "id": "general_043",
+    "prompt": "只輸出數字：68 + 21 = ?",
+    "answer": "89"
+  },
+  {
+    "id": "general_044",
+    "prompt": "只輸出數字：75 + 32 = ?",
+    "answer": "107"
+  },
+  {
+    "id": "general_045",
+    "prompt": "只輸出數字：82 + 6 = ?",
+    "answer": "88"
+  },
+  {
+    "id": "general_046",
+    "prompt": "只輸出數字：89 + 17 = ?",
+    "answer": "106"
+  },
+  {
+    "id": "general_047",
+    "prompt": "只輸出數字：17 + 28 = ?",
+    "answer": "45"
+  },
+  {
+    "id": "general_048",
+    "prompt": "只輸出數字：24 + 39 = ?",
+    "answer": "63"
+  },
+  {
+    "id": "general_049",
+    "prompt": "只輸出數字：31 + 13 = ?",
+    "answer": "44"
+  },
+  {
+    "id": "general_050",
+    "prompt": "只輸出數字：38 + 24 = ?",
+    "answer": "62"
+  },
+  {
+    "id": "general_051",
+    "prompt": "只輸出數字：45 + 35 = ?",
+    "answer": "80"
+  },
+  {
+    "id": "general_052",
+    "prompt": "只輸出數字：52 + 9 = ?",
+    "answer": "61"
+  },
+  {
+    "id": "general_053",
+    "prompt": "只輸出數字：59 + 20 = ?",
+    "answer": "79"
+  },
+  {
+    "id": "general_054",
+    "prompt": "只輸出數字：66 + 31 = ?",
+    "answer": "97"
+  },
+  {
+    "id": "general_055",
+    "prompt": "只輸出數字：73 + 5 = ?",
+    "answer": "78"
+  },
+  {
+    "id": "general_056",
+    "prompt": "只輸出數字：80 + 16 = ?",
+    "answer": "96"
+  },
+  {
+    "id": "general_057",
+    "prompt": "只輸出數字：87 + 27 = ?",
+    "answer": "114"
+  },
+  {
+    "id": "general_058",
+    "prompt": "只輸出數字：15 + 38 = ?",
+    "answer": "53"
+  },
+  {
+    "id": "general_059",
+    "prompt": "只輸出數字：22 + 12 = ?",
+    "answer": "34"
+  },
+  {
+    "id": "general_060",
+    "prompt": "只輸出數字：29 + 23 = ?",
+    "answer": "52"
+  },
+  {
+    "id": "general_061",
+    "prompt": "只輸出數字：36 + 34 = ?",
+    "answer": "70"
+  },
+  {
+    "id": "general_062",
+    "prompt": "只輸出數字：43 + 8 = ?",
+    "answer": "51"
+  },
+  {
+    "id": "general_063",
+    "prompt": "只輸出數字：50 + 19 = ?",
+    "answer": "69"
+  },
+  {
+    "id": "general_064",
+    "prompt": "只輸出數字：57 + 30 = ?",
+    "answer": "87"
+  },
+  {
+    "id": "general_065",
+    "prompt": "只輸出數字：64 + 4 = ?",
+    "answer": "68"
+  },
+  {
+    "id": "general_066",
+    "prompt": "只輸出數字：71 + 15 = ?",
+    "answer": "86"
+  },
+  {
+    "id": "general_067",
+    "prompt": "只輸出數字：78 + 26 = ?",
+    "answer": "104"
+  },
+  {
+    "id": "general_068",
+    "prompt": "只輸出數字：85 + 37 = ?",
+    "answer": "122"
+  },
+  {
+    "id": "general_069",
+    "prompt": "只輸出數字：13 + 11 = ?",
+    "answer": "24"
+  },
+  {
+    "id": "general_070",
+    "prompt": "只輸出數字：20 + 22 = ?",
+    "answer": "42"
+  },
+  {
+    "id": "general_071",
+    "prompt": "只輸出數字：27 + 33 = ?",
+    "answer": "60"
+  },
+  {
+    "id": "general_072",
+    "prompt": "只輸出數字：34 + 7 = ?",
+    "answer": "41"
+  },
+  {
+    "id": "general_073",
+    "prompt": "只輸出數字：41 + 18 = ?",
+    "answer": "59"
+  },
+  {
+    "id": "general_074",
+    "prompt": "只輸出數字：48 + 29 = ?",
+    "answer": "77"
+  },
+  {
+    "id": "general_075",
+    "prompt": "只輸出數字：55 + 3 = ?",
+    "answer": "58"
+  },
+  {
+    "id": "general_076",
+    "prompt": "只輸出數字：62 + 14 = ?",
+    "answer": "76"
+  },
+  {
+    "id": "general_077",
+    "prompt": "只輸出數字：69 + 25 = ?",
+    "answer": "94"
+  },
+  {
+    "id": "general_078",
+    "prompt": "只輸出數字：76 + 36 = ?",
+    "answer": "112"
+  },
+  {
+    "id": "general_079",
+    "prompt": "只輸出數字：83 + 10 = ?",
+    "answer": "93"
+  },
+  {
+    "id": "general_080",
+    "prompt": "只輸出數字：11 + 21 = ?",
+    "answer": "32"
+  },
+  {
+    "id": "general_081",
+    "prompt": "只輸出數字：18 + 32 = ?",
+    "answer": "50"
+  },
+  {
+    "id": "general_082",
+    "prompt": "只輸出數字：25 + 6 = ?",
+    "answer": "31"
+  },
+  {
+    "id": "general_083",
+    "prompt": "只輸出數字：32 + 17 = ?",
+    "answer": "49"
+  },
+  {
+    "id": "general_084",
+    "prompt": "只輸出數字：39 + 28 = ?",
+    "answer": "67"
+  },
+  {
+    "id": "general_085",
+    "prompt": "只輸出數字：46 + 39 = ?",
+    "answer": "85"
+  },
+  {
+    "id": "general_086",
+    "prompt": "只輸出數字：53 + 13 = ?",
+    "answer": "66"
+  },
+  {
+    "id": "general_087",
+    "prompt": "只輸出數字：60 + 24 = ?",
+    "answer": "84"
+  },
+  {
+    "id": "general_088",
+    "prompt": "只輸出數字：67 + 35 = ?",
+    "answer": "102"
+  },
+  {
+    "id": "general_089",
+    "prompt": "只輸出數字：74 + 9 = ?",
+    "answer": "83"
+  },
+  {
+    "id": "general_090",
+    "prompt": "只輸出數字：81 + 20 = ?",
+    "answer": "101"
+  },
+  {
+    "id": "general_091",
+    "prompt": "只輸出數字：88 + 31 = ?",
+    "answer": "119"
+  },
+  {
+    "id": "general_092",
+    "prompt": "只輸出數字：16 + 5 = ?",
+    "answer": "21"
+  },
+  {
+    "id": "general_093",
+    "prompt": "只輸出數字：23 + 16 = ?",
+    "answer": "39"
+  },
+  {
+    "id": "general_094",
+    "prompt": "只輸出數字：30 + 27 = ?",
+    "answer": "57"
+  },
+  {
+    "id": "general_095",
+    "prompt": "只輸出數字：37 + 38 = ?",
+    "answer": "75"
+  },
+  {
+    "id": "general_096",
+    "prompt": "只輸出數字：44 + 12 = ?",
+    "answer": "56"
+  },
+  {
+    "id": "general_097",
+    "prompt": "只輸出數字：51 + 23 = ?",
+    "answer": "74"
+  },
+  {
+    "id": "general_098",
+    "prompt": "只輸出數字：58 + 34 = ?",
+    "answer": "92"
+  },
+  {
+    "id": "general_099",
+    "prompt": "只輸出數字：65 + 8 = ?",
+    "answer": "73"
+  },
+  {
+    "id": "general_100",
+    "prompt": "只輸出數字：72 + 19 = ?",
+    "answer": "91"
+  }
+]

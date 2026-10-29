@@ -66,3 +66,9 @@
 - Flickr8k Image Captioning：以 CLIP ViT-B/32 作 Image Encoder、GPT-2 作文字 Decoder，計算 BLEU 與 BERTScore。
 - 與 Week 4 BLIP 比較後，CLIP-GPT2 表現較低，說明 image-text alignment 與跨模態生成式預訓練的重要性。
 - 三份 notebook 均包含正式訓練輸出、指標比較、視覺化推論與完整實驗結論，詳見 [Week05 作業總覽](Week05/README.md)。
+
+## 第七週導覽
+
+[Week07：LLM、VLM 與 DPO 實驗](Week07/README.md) 完成作業 A、B、C 的基礎與進階要求。三份 notebook 皆透過 **Google Colab** 與 **NVIDIA Tesla T4 GPU** 執行，完整執行記錄及輸出結果一併保存。
+
+作業 C 使用完整 120 組 VLM 偏好資料。由於 TRL 在訓練前預處理全部影像時會耗盡 Colab 系統 RAM，因此以固定 seed 洗牌後切成 **4 個互斥批次，每批 30 組**，依序更新同一組 LoRA adapter；四批合計涵蓋全部資料，詳細方法、限制與結果請見 [Week07 README](Week07/README.md)。

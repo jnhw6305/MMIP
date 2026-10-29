@@ -1,0 +1,27 @@
+# Notebook/runtime cache
+.ipynb_checkpoints/
+__pycache__/
+*.py[cod]
+
+# Generated experiment results
+outputs/
+outputs_B/
+outputs_C/
+vlm_benchmark_images/
+vlm_dpo_images/
+*_outputs.zip
+MMIP_HW7_ALL.zip
+MMIP_HW7_GitHub_Ready.zip
+
+# Model/checkpoint artifacts
+checkpoints/
+**/*_checkpoints/
+**/*_adapter/
+wandb/
+runs/
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+

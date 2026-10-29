@@ -1,0 +1,242 @@
+[
+  {
+    "id": "test_200",
+    "image": "vlm_dpo_images/test_200.png",
+    "prompt": "Describe only the visible colored shapes. Do not mention objects that are absent.",
+    "chosen": "The image contains purple triangle, orange circle, red square.",
+    "rejected": "The image contains purple triangle, orange circle, red square, and a black star.",
+    "absent": "black star"
+  },
+  {
+    "id": "test_201",
+    "image": "vlm_dpo_images/test_201.png",
+    "prompt": "Describe only the visible colored shapes. Do not mention objects that are absent.",
+    "chosen": "The image contains red circle.",
+    "rejected": "The image contains red circle, and a black star.",
+    "absent": "black star"
+  },
+  {
+    "id": "test_202",
+    "image": "vlm_dpo_images/test_202.png",
+    "prompt": "Describe only the visible colored shapes. Do not mention objects that are absent.",
+    "chosen": "The image contains green square, yellow triangle.",
+    "rejected": "The image contains green square, yellow triangle, and a black star.",
+    "absent": "black star"
+  },
+  {
+    "id": "test_203",
+    "image": "vlm_dpo_images/test_203.png",
+    "prompt": "Describe only the visible colored shapes. Do not mention objects that are absent.",
+    "chosen": "The image contains purple triangle, orange circle, red square.",
+    "rejected": "The image contains purple triangle, orange circle, red square, and a black star.",
+    "absent": "black star"
+  },
+  {
+    "id": "test_204",
+    "image": "vlm_dpo_images/test_204.png",
+    "prompt": "Describe only the visible colored shapes. Do not mention objects that are absent.",
+    "chosen": "The image contains red circle.",
+    "rejected": "The image contains red circle, and a black star.",
+    "absent": "black star"
+  },
+  {
+    "id": "test_205",
+    "image": "vlm_dpo_images/test_205.png",
+    "prompt": "Describe only the visible colored shapes. Do not mention objects that are absent.",
+    "chosen": "The image contains green square, yellow triangle.",
+    "rejected": "The image contains green square, yellow triangle, and a black star.",
+    "absent": "black star"
+  },
+  {
+    "id": "test_206",
+    "image": "vlm_dpo_images/test_206.png",
+    "prompt": "Describe only the visible colored shapes. Do not mention objects that are absent.",
+    "chosen": "The image contains purple triangle, orange circle, red square.",
+    "rejected": "The image contains purple triangle, orange circle, red square, and a black star.",
+    "absent": "black star"
+  },
+  {
+    "id": "test_207",
+    "image": "vlm_dpo_images/test_207.png",
+    "prompt": "Describe only the visible colored shapes. Do not mention objects that are absent.",
+    "chosen": "The image contains red circle.",
+    "rejected": "The image contains red circle, and a black star.",
+    "absent": "black star"
+  },
+  {
+    "id": "test_208",
+    "image": "vlm_dpo_images/test_208.png",
+    "prompt": "Describe only the visible colored shapes. Do not mention objects that are absent.",
+    "chosen": "The image contains green square, yellow triangle.",
+    "rejected": "The image contains green square, yellow triangle, and a black star.",
+    "absent": "black star"
+  },
+  {
+    "id": "test_209",
+    "image": "vlm_dpo_images/test_209.png",
+    "prompt": "Describe only the visible colored shapes. Do not mention objects that are absent.",
+    "chosen": "The image contains purple triangle, orange circle, red square.",
+    "rejected": "The image contains purple triangle, orange circle, red square, and a black star.",
+    "absent": "black star"
+  },
+  {
+    "id": "test_210",
+    "image": "vlm_dpo_images/test_210.png",
+    "prompt": "Describe only the visible colored shapes. Do not mention objects that are absent.",
+    "chosen": "The image contains red circle.",
+    "rejected": "The image contains red circle, and a black star.",
+    "absent": "black star"
+  },
+  {
+    "id": "test_211",
+    "image": "vlm_dpo_images/test_211.png",
+    "prompt": "Describe only the visible colored shapes. Do not mention objects that are absent.",
+    "chosen": "The image contains green square, yellow triangle.",
+    "rejected": "The image contains green square, yellow triangle, and a black star.",
+    "absent": "black star"
+  },
+  {
+    "id": "test_212",
+    "image": "vlm_dpo_images/test_212.png",
+    "prompt": "Describe only the visible colored shapes. Do not mention objects that are absent.",
+    "chosen": "The image contains purple triangle, orange circle, red square.",
+    "rejected": "The image contains purple triangle, orange circle, red square, and a black star.",
+    "absent": "black star"
+  },
+  {
+    "id": "test_213",
+    "image": "vlm_dpo_images/test_213.png",
+    "prompt": "Describe only the visible colored shapes. Do not mention objects that are absent.",
+    "chosen": "The image contains red circle.",
+    "rejected": "The image contains red circle, and a black star.",
+    "absent": "black star"
+  },
+  {
+    "id": "test_214",
+    "image": "vlm_dpo_images/test_214.png",
+    "prompt": "Describe only the visible colored shapes. Do not mention objects that are absent.",
+    "chosen": "The image contains green square, yellow triangle.",
+    "rejected": "The image contains green square, yellow triangle, and a black star.",
+    "absent": "black star"
+  },
+  {
+    "id": "test_215",
+    "image": "vlm_dpo_images/test_215.png",
+    "prompt": "Describe only the visible colored shapes. Do not mention objects that are absent.",
+    "chosen": "The image contains purple triangle, orange circle, red square.",
+    "rejected": "The image contains purple triangle, orange circle, red square, and a black star.",
+    "absent": "black star"
+  },
+  {
+    "id": "test_216",
+    "image": "vlm_dpo_images/test_216.png",
+    "prompt": "Describe only the visible colored shapes. Do not mention objects that are absent.",
+    "chosen": "The image contains red circle.",
+    "rejected": "The image contains red circle, and a black star.",
+    "absent": "black star"
+  },
+  {
+    "id": "test_217",
+    "image": "vlm_dpo_images/test_217.png",
+    "prompt": "Describe only the visible colored shapes. Do not mention objects that are absent.",
+    "chosen": "The image contains green square, yellow triangle.",
+    "rejected": "The image contains green square, yellow triangle, and a black star.",
+    "absent": "black star"
+  },
+  {
+    "id": "test_218",
+    "image": "vlm_dpo_images/test_218.png",
+    "prompt": "Describe only the visible colored shapes. Do not mention objects that are absent.",
+    "chosen": "The image contains purple triangle, orange circle, red square.",
+    "rejected": "The image contains purple triangle, orange circle, red square, and a black star.",
+    "absent": "black star"
+  },
+  {
+    "id": "test_219",
+    "image": "vlm_dpo_images/test_219.png",
+    "prompt": "Describe only the visible colored shapes. Do not mention objects that are absent.",
+    "chosen": "The image contains red circle.",
+    "rejected": "The image contains red circle, and a black star.",
+    "absent": "black star"
+  },
+  {
+    "id": "test_220",
+    "image": "vlm_dpo_images/test_220.png",
+    "prompt": "Describe only the visible colored shapes. Do not mention objects that are absent.",
+    "chosen": "The image contains green square, yellow triangle.",
+    "rejected": "The image contains green square, yellow triangle, and a black star.",
+    "absent": "black star"
+  },
+  {
+    "id": "test_221",
+    "image": "vlm_dpo_images/test_221.png",
+    "prompt": "Describe only the visible colored shapes. Do not mention objects that are absent.",
+    "chosen": "The image contains purple triangle, orange circle, red square.",
+    "rejected": "The image contains purple triangle, orange circle, red square, and a black star.",
+    "absent": "black star"
+  },
+  {
+    "id": "test_222",
+    "image": "vlm_dpo_images/test_222.png",
+    "prompt": "Describe only the visible colored shapes. Do not mention objects that are absent.",
+    "chosen": "The image contains red circle.",
+    "rejected": "The image contains red circle, and a black star.",
+    "absent": "black star"
+  },
+  {
+    "id": "test_223",
+    "image": "vlm_dpo_images/test_223.png",
+    "prompt": "Describe only the visible colored shapes. Do not mention objects that are absent.",
+    "chosen": "The image contains green square, yellow triangle.",
+    "rejected": "The image contains green square, yellow triangle, and a black star.",
+    "absent": "black star"
+  },
+  {
+    "id": "test_224",
+    "image": "vlm_dpo_images/test_224.png",
+    "prompt": "Describe only the visible colored shapes. Do not mention objects that are absent.",
+    "chosen": "The image contains purple triangle, orange circle, red square.",
+    "rejected": "The image contains purple triangle, orange circle, red square, and a black star.",
+    "absent": "black star"
+  },
+  {
+    "id": "test_225",
+    "image": "vlm_dpo_images/test_225.png",
+    "prompt": "Describe only the visible colored shapes. Do not mention objects that are absent.",
+    "chosen": "The image contains red circle.",
+    "rejected": "The image contains red circle, and a black star.",
+    "absent": "black star"
+  },
+  {
+    "id": "test_226",
+    "image": "vlm_dpo_images/test_226.png",
+    "prompt": "Describe only the visible colored shapes. Do not mention objects that are absent.",
+    "chosen": "The image contains green square, yellow triangle.",
+    "rejected": "The image contains green square, yellow triangle, and a black star.",
+    "absent": "black star"
+  },
+  {
+    "id": "test_227",
+    "image": "vlm_dpo_images/test_227.png",
+    "prompt": "Describe only the visible colored shapes. Do not mention objects that are absent.",
+    "chosen": "The image contains purple triangle, orange circle, red square.",
+    "rejected": "The image contains purple triangle, orange circle, red square, and a black star.",
+    "absent": "black star"
+  },
+  {
+    "id": "test_228",
+    "image": "vlm_dpo_images/test_228.png",
+    "prompt": "Describe only the visible colored shapes. Do not mention objects that are absent.",
+    "chosen": "The image contains red circle.",
+    "rejected": "The image contains red circle, and a black star.",
+    "absent": "black star"
+  },
+  {
+    "id": "test_229",
+    "image": "vlm_dpo_images/test_229.png",
+    "prompt": "Describe only the visible colored shapes. Do not mention objects that are absent.",
+    "chosen": "The image contains green square, yellow triangle.",
+    "rejected": "The image contains green square, yellow triangle, and a black star.",
+    "absent": "black star"
+  }
+]
