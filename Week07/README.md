@@ -2,7 +2,7 @@
 
 ## 執行環境
 
-本作業 A、B、C 皆使用 **Google Colab** 與 **NVIDIA Tesla T4 GPU** 完整執行。三份 notebook 保留執行記錄，各作業的逐題結果、摘要、圖表與報告收錄在 `outputs_A.zip`、`outputs_B.zip` 與 `outputs_C.zip`。
+本作業 1、B、C 皆使用 **Google Colab** 與 **NVIDIA Tesla T4 GPU** 完整執行。三份 notebook 保留執行記錄，各作業的逐題結果、摘要、圖表與報告收錄在 `outputs_A.zip`、`outputs_B.zip` 與 `outputs_C.zip`。
 
 ## 作業一：大型語言模型
 
