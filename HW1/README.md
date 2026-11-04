@@ -14,13 +14,13 @@
 ```bat
 cd /d D:\NYCU\MMIP-clone
 conda activate mmip
-python Week01\Code\quiz1_grayscale.py
-python Week01\Code\quiz2_histogram.py
-python Week01\Code\quiz3_perspective.py --output-dir Week01\Data\Quiz3\advanced
-python Week01\Code\quiz3_stress_test.py
-python Week01\Code\quiz4_stitching.py
+python HW1\Code\quiz1_grayscale.py
+python HW1\Code\quiz2_histogram.py
+python HW1\Code\quiz3_perspective.py --output-dir HW1\Data\Quiz3\advanced
+python HW1\Code\quiz3_stress_test.py
+python HW1\Code\quiz4_stitching.py
 ```
 
-Quiz 1／2 的預設輸出位於 `Week01/Data/Quiz1/advanced/`、`Week01/Data/Quiz2/advanced/`。Quiz 3 使用 `Week01/Data/Quiz3/` 中的 `document*.jpg`；會跳過既有的 `*_corners` 與 `*_corrected` 圖。Quiz 4 預設讀取 `Week01/Data/Quiz4/`，每次在 `results/quiz4_two_pairs/` 建立有時間戳記的新資料夾；正式報告與代表性影像位於 `Week01/Data/Quiz4/advanced/`。
+Quiz 1／2 的預設輸出位於 `HW1/Data/Quiz1/advanced/`、`HW1/Data/Quiz2/advanced/`。Quiz 3 使用 `HW1/Data/Quiz3/` 中的 `document*.jpg`；會跳過既有的 `*_corners` 與 `*_corrected` 圖。Quiz 4 預設讀取 `HW1/Data/Quiz4/`，每次在 `results/quiz4_two_pairs/` 建立有時間戳記的新資料夾；正式報告與代表性影像位於 `HW1/Data/Quiz4/advanced/`。
 
 注意：Quiz 3 四張照片未記錄實際拍攝角度，亮度／模糊測試為軟體模擬；Quiz 4 的裁切比例不是實際重疊率。程式產圖後仍須目視檢查，特別是 Quiz 3 的邊界裁切與 Quiz 4 的黑邊、接縫、重影。

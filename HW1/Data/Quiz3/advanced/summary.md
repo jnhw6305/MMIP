@@ -3,8 +3,8 @@
 執行方式（於儲存庫根目錄）：
 
 ```bat
-python Week01\Code\quiz3_perspective.py --pattern "document*.jpg" --output-dir "Week01\Data\Quiz3\advanced"
-python Week01\Code\quiz3_stress_test.py
+python HW1\Code\quiz3_perspective.py --pattern "document*.jpg" --output-dir "HW1\Data\Quiz3\advanced"
+python HW1\Code\quiz3_stress_test.py
 ```
 
 程式不使用手動點選或針對個別照片寫死座標。先嘗試一般四邊形輪廓與原有雙色書封方法；失敗後，依序使用較低 Canny 門檻、藍色／青色封面分割。候選四邊形須通過面積、凸性、邊長和邊界檢查。輸出每張照片的角點標記圖、校正圖及 [summary.csv](summary.csv)。

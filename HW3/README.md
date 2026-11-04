@@ -1,4 +1,4 @@
-# Week03：CNN 影像分類與可解釋性分析
+# HW3：CNN 影像分類與可解釋性分析
 
 ## 使用 Google Colab 開啟完整作業
 
@@ -9,7 +9,7 @@
 
 建議讀者透過 Google Colab 開啟「含輸出」版本閱讀與執行。
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jnhw6305/MMIP/blob/main/Week03/MMIP_CNN%E5%AE%8C%E6%95%B4%E4%BD%9C%E6%A5%AD_%E5%90%AB%E8%BC%B8%E5%87%BA.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jnhw6305/MMIP/blob/main/HW3/MMIP_CNN%E5%AE%8C%E6%95%B4%E4%BD%9C%E6%A5%AD_%E5%90%AB%E8%BC%B8%E5%87%BA.ipynb)
 
 操作步驟：
 

@@ -1,7 +1,7 @@
 """Controlled image-degradation test; these are not extra real photographs.
 
 Run from the repository root:
-    python Week01/Code/quiz3_stress_test.py
+    python HW1/Code/quiz3_stress_test.py
 """
 
 import csv
@@ -12,11 +12,11 @@ import cv2
 import numpy as np
 
 PROJECT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(PROJECT / "Week01" / "Code"))
+sys.path.insert(0, str(PROJECT / "HW1" / "Code"))
 from quiz3_perspective import detect_corners  # noqa: E402
 
-INPUT = PROJECT / "Week01" / "Data" / "Quiz3"
-OUTPUT = PROJECT / "Week01" / "Data" / "Quiz3" / "advanced" / "stress.csv"
+INPUT = PROJECT / "HW1" / "Data" / "Quiz3"
+OUTPUT = PROJECT / "HW1" / "Data" / "Quiz3" / "advanced" / "stress.csv"
 
 
 def read_image(path):

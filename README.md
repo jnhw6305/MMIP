@@ -4,7 +4,7 @@
 
 ## 期中專案：CreditGuard-TS
 
-結合 Week02 信用卡違約分類、六個月時間特徵與統計合成資料的互動式預警系統。
+結合 HW2 信用卡違約分類、六個月時間特徵與統計合成資料的互動式預警系統。
 
 - **[直接開啟 CreditGuard-TS 公開網站](https://jnhw6305.github.io/MMIP/)**
 - [MIDTERM 原始碼、實驗程式與完整結果](MIDTERM/README.md)
@@ -12,63 +12,63 @@
 
 ## 第一週導覽
 
-- [Week01 作業總覽與執行方式](Week01/README.md)
-- [程式碼與指令](Week01/Code/README.md)
-- [AI 輔助紀錄與人工驗證](Week01/AI/README.md)
-- [輸入與結果資料索引](Week01/Data/README.md)
+- [HW1 作業總覽與執行方式](HW1/README.md)
+- [程式碼與指令](HW1/Code/README.md)
+- [AI 輔助紀錄與人工驗證](HW1/AI/README.md)
+- [輸入與結果資料索引](HW1/Data/README.md)
 
 | 題目 | 程式 | 主要結果 |
 | --- | --- | --- |
-| Quiz 1：彩色轉灰階 | [quiz1_grayscale.py](Week01/Code/quiz1_grayscale.py) | [NumPy／OpenCV 比較](Week01/Data/Quiz1/advanced/summary.md) |
-| Quiz 2：直方圖等化 | [quiz2_histogram.py](Week01/Code/quiz2_histogram.py) | [直方圖與效能比較](Week01/Data/Quiz2/advanced/summary.md) |
-| Quiz 3：透視校正 | [quiz3_perspective.py](Week01/Code/quiz3_perspective.py) | [多張實拍測試](Week01/Data/Quiz3/advanced/summary.md) |
-| Quiz 4：影像拼接 | [quiz4_stitching.py](Week01/Code/quiz4_stitching.py) | [條件與前處理比較](Week01/Data/Quiz4/advanced/summary.md) |
+| Quiz 1：彩色轉灰階 | [quiz1_grayscale.py](HW1/Code/quiz1_grayscale.py) | [NumPy／OpenCV 比較](HW1/Data/Quiz1/advanced/summary.md) |
+| Quiz 2：直方圖等化 | [quiz2_histogram.py](HW1/Code/quiz2_histogram.py) | [直方圖與效能比較](HW1/Data/Quiz2/advanced/summary.md) |
+| Quiz 3：透視校正 | [quiz3_perspective.py](HW1/Code/quiz3_perspective.py) | [多張實拍測試](HW1/Data/Quiz3/advanced/summary.md) |
+| Quiz 4：影像拼接 | [quiz4_stitching.py](HW1/Code/quiz4_stitching.py) | [條件與前處理比較](HW1/Data/Quiz4/advanced/summary.md) |
 
-執行環境需要 Python、NumPy 與 OpenCV。於儲存庫根目錄執行程式；詳細指令見 [Week01/Code/README.md](Week01/Code/README.md)。報告中的「成功產圖」不等於完美影像，請一併查看角點、接縫、黑邊及限制說明。
+執行環境需要 Python、NumPy 與 OpenCV。於儲存庫根目錄執行程式；詳細指令見 [HW1/Code/README.md](HW1/Code/README.md)。報告中的「成功產圖」不等於完美影像，請一併查看角點、接縫、黑邊及限制說明。
 
 ## 第二週導覽
 
-[Week02：信用卡違約分類與模型評估](Week02/README.md) 完成 Quiz 1–3 的基礎與進階要求：
+[HW2：信用卡違約分類與模型評估](HW2/README.md) 完成 Quiz 1–3 的基礎與進階要求：
 
 - 使用 Logistic Regression 與 Random Forest，比較分類門檻、混淆矩陣、Accuracy、Precision、Recall 與 F1-score。
 - 使用 PyTorch 建立 MLP 並訓練 60 epochs，再加入 Dropout 與 L2 regularization 建立改善版模型。
 - 比較 Training／Validation Loss、ROC Curve 與 AUC，並保留原始資料、訓練歷程及驗證集逐筆預測。
 
-第二週執行環境需要 Python、NumPy、Pandas、Scikit-Learn、PyTorch 與 Matplotlib；執行方式和完整實驗結果請見 [Week02 作業報告](Week02/README.md)。
+第二週執行環境需要 Python、NumPy、Pandas、Scikit-Learn、PyTorch 與 Matplotlib；執行方式和完整實驗結果請見 [HW2 作業報告](HW2/README.md)。
 
 ## 第三週導覽
 
-[Week03：CNN 影像分類與可解釋性分析](Week03/README.md) 使用 CIFAR-10 比較自行設計的 MultiScale-Pyramid CNN 與 ImageNet 預訓練 MobileNetV2：
+[HW3：CNN 影像分類與可解釋性分析](HW3/README.md) 使用 CIFAR-10 比較自行設計的 MultiScale-Pyramid CNN 與 ImageNet 預訓練 MobileNetV2：
 
 - 將 32×32 RGB 圖片判斷為飛機、汽車、鳥、貓、鹿、狗、青蛙、馬、船或卡車。
 - 比較 Testing Dataset 的 Top-1、Top-5、混淆矩陣、逐類 ROC、Macro-AUC、參數量與訓練時間。
 - 完成超參數組合實驗及 Data Augmentation 前後對照，並誠實分析 augmentation 未提升本次結果的原因與限制。
 - 視覺化兩個第一層 CNN Kernel、activation map，以及正確與錯誤案例的 Grad-CAM。
 
-基準實驗中，MobileNetV2 的測試 Top-1／Top-5／Macro-AUC 為 **0.8909／0.9965／0.992878**；自行設計的 Plain CNN 以 299,754 個參數取得 **0.8427** Top-1。作業導覽與 Colab 開啟方式請見 [Week03 README](Week03/README.md)；GitHub 可直接閱讀[預覽版 Notebook](Week03/MMIP_CNN完整作業.ipynb)，正式輸出則保存在[含輸出版本](Week03/MMIP_CNN完整作業_含輸出.ipynb)。
+基準實驗中，MobileNetV2 的測試 Top-1／Top-5／Macro-AUC 為 **0.8909／0.9965／0.992878**；自行設計的 Plain CNN 以 299,754 個參數取得 **0.8427** Top-1。作業導覽與 Colab 開啟方式請見 [HW3 README](HW3/README.md)；GitHub 可直接閱讀[預覽版 Notebook](HW3/MMIP_CNN完整作業.ipynb)，正式輸出則保存在[含輸出版本](HW3/MMIP_CNN完整作業_含輸出.ipynb)。
 
 ## 第四週導覽
 
-[Week04](Week04/README.md) 完成文字情緒分析、影像分類與影像描述實驗。
+[HW4](HW4/README.md) 完成文字情緒分析、影像分類與影像描述實驗。
 
 - IMDb 情緒分析：比較 RNN 與 LSTM，LSTM Accuracy 與 Macro-F1 均達 0.7740。
 - CIFAR-10 影像分類：比較 Vision Transformer 與 ResNet；ViT Accuracy 為 0.9655、Macro-AUC 為 0.9988。
 - Flickr8k 影像描述：使用 BLIP 比較 greedy 與 beam search，並計算 BLEU、BERTScore 與推論延遲。
 - 使用 Gemini API 對影像描述結果進行額外語意評估。
-- 完整實驗數據請參閱 [Week04/REPORT.md](Week04/REPORT.md) 與 [Week04/results](Week04/results)。
+- 完整實驗數據請參閱 [HW4/REPORT.md](HW4/REPORT.md) 與 [HW4/results](HW4/results)。
 
 ## 第五週導覽
 
-[Week05：多模態深度學習神經網路](Week05/README.md) 完成影像檢索、影像與文字融合分類，以及 CLIP Image Captioning：
+[HW5：多模態深度學習神經網路](HW5/README.md) 完成影像檢索、影像與文字融合分類，以及 CLIP Image Captioning：
 
 - CIFAR-10 影像檢索：比較 ResNet-18 與 ViT-Tiny 的 embedding，ViT-Tiny Recall@1／mAP@10 為 **0.8975／0.8698**。
 - MM-IMDb 多模態分類：融合電影海報與劇情文字；ViT-Base＋DistilBERT 的 Micro-F1／Macro-F1 為 **0.5857／0.5480**。
 - Flickr8k Image Captioning：以 CLIP ViT-B/32 作 Image Encoder、GPT-2 作文字 Decoder，計算 BLEU 與 BERTScore。
 - 與 Week 4 BLIP 比較後，CLIP-GPT2 表現較低，說明 image-text alignment 與跨模態生成式預訓練的重要性。
-- 三份 notebook 均包含正式訓練輸出、指標比較、視覺化推論與完整實驗結論，詳見 [Week05 作業總覽](Week05/README.md)。
+- 三份 notebook 均包含正式訓練輸出、指標比較、視覺化推論與完整實驗結論，詳見 [HW5 作業總覽](HW5/README.md)。
 
 ## 第七週導覽
 
-[Week07：LLM、VLM 與 DPO 實驗](Week07/README.md) 完成作業 A、B、C 的基礎與進階要求。三份 notebook 皆透過 **Google Colab** 與 **NVIDIA Tesla T4 GPU** 執行，完整執行記錄及輸出結果一併保存。
+[HW6：LLM、VLM 與 DPO 實驗](HW6/README.md) 完成作業 A、B、C 的基礎與進階要求。三份 notebook 皆透過 **Google Colab** 與 **NVIDIA Tesla T4 GPU** 執行，完整執行記錄及輸出結果一併保存。
 
-作業 C 使用完整 120 組 VLM 偏好資料。由於 TRL 在訓練前預處理全部影像時會耗盡 Colab 系統 RAM，因此以固定 seed 洗牌後切成 **4 個互斥批次，每批 30 組**，依序更新同一組 LoRA adapter；四批合計涵蓋全部資料，詳細方法、限制與結果請見 [Week07 README](Week07/README.md)。
+作業 C 使用完整 120 組 VLM 偏好資料。由於 TRL 在訓練前預處理全部影像時會耗盡 Colab 系統 RAM，因此以固定 seed 洗牌後切成 **4 個互斥批次，每批 30 組**，依序更新同一組 LoRA adapter；四批合計涵蓋全部資料，詳細方法、限制與結果請見 [HW6 README](HW6/README.md)。
