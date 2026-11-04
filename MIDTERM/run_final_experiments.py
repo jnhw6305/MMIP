@@ -20,7 +20,7 @@ dataset = fetch_ucirepo(id=350)
 X = dataset.data.features.astype(float).copy()
 y = dataset.data.targets.iloc[:, 0].astype(int).copy()
 
-# Exactly reproduce the Week02 19,200 / 4,800 / 6,000 split sizes.
+# Exactly reproduce the HW2 19,200 / 4,800 / 6,000 split sizes.
 X_dev, X_test, y_dev, y_test = train_test_split(
     X, y, test_size=0.20, stratify=y, random_state=SEED
 )
@@ -118,7 +118,7 @@ train_time_synthetic = pd.concat([train_time, synthetic_time], ignore_index=True
 experiments = []
 importance = {}
 for name, train_x, train_y, cal_x, test_x in [
-    ("Week02 RF baseline", X_train, y_train, X_cal, X_test),
+    ("HW2 RF baseline", X_train, y_train, X_cal, X_test),
     ("RF + time features", train_time, y_train, cal_time, test_time),
     ("RF + synthetic data", X_train_synthetic, y_train_synthetic, X_cal, X_test),
     ("RF + time + synthetic", train_time_synthetic, y_train_synthetic, cal_time, test_time),

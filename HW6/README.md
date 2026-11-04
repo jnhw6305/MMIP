@@ -1,4 +1,4 @@
-# MMIP HW7 — LLM、VLM 與 DPO 實驗
+# MMIP HW6 — LLM、VLM 與 DPO 實驗
 
 ## 執行環境
 
@@ -16,7 +16,7 @@
 
 主要檔案：
 
-- `HW7_1_LLM.ipynb`
+- `HW6_1_LLM.ipynb`
 - `benchmark.json`
 
 ## 作業 B：視覺多模態大模型
@@ -30,7 +30,7 @@
 
 主要檔案：
 
-- `HW7_B_VLM.ipynb`
+- `HW6_B_VLM.ipynb`
 - `vlm_benchmark.json`
 - `vlm_benchmark_images.zip`
 
@@ -60,7 +60,7 @@ TRL 的 VLM DPO 會在訓練前預先將影像轉換為 image tokens / pixel val
 
 主要檔案：
 
-- `HW7_C_DPO_LLM_VLM.ipynb`
+- `HW6_C_DPO_LLM_VLM.ipynb`
 - `llm_dpo_train.json`
 - `llm_target_benchmark.json`
 - `llm_general_benchmark.json`

@@ -21,7 +21,7 @@
   },
   "experiments": [
     {
-      "name": "Week02 RF baseline",
+      "name": "HW2 RF baseline",
       "threshold": 0.44,
       "accuracy": 0.7922,
       "precision": 0.5293,
@@ -78,7 +78,7 @@
     }
   ],
   "feature_importance": {
-    "Week02 RF baseline": [
+    "HW2 RF baseline": [
       {
         "feature": "X6",
         "importance": 0.1349

@@ -8,7 +8,7 @@
 | --- | --- | --- | --- |
 | Quiz 1：影像檢索 | CIFAR-10；ResNet-18／ViT-Tiny | Recall@1/5/10、Precision@5、mAP@10；CNN 與 ViT 比較 | [開啟](MMIP_HW5_Quiz1_Image_Retrieval.ipynb) |
 | Quiz 2：多模態分類 | MM-IMDb；影像 backbone＋DistilBERT＋fusion MLP | Micro/Macro-F1、Subset Accuracy、Hamming Loss；更換影像 backbone | [開啟](MMIP_HW5_Quiz2_Multimodal_Classification.ipynb) |
-| Quiz 3：CLIP Image Captioning | Flickr8k；CLIP ViT-B/32＋GPT-2 Decoder | BLEU-1/4、BERTScore、推論案例；與 Week 4 BLIP 比較 | [開啟](MMIP_HW5_Quiz3_CLIP_Image_Captioning.ipynb) |
+| Quiz 3：CLIP Image Captioning | Flickr8k；CLIP ViT-B/32＋GPT-2 Decoder | BLEU-1/4、BERTScore、推論案例；與 HW4 BLIP 比較 | [開啟](MMIP_HW5_Quiz3_CLIP_Image_Captioning.ipynb) |
 
 ## Quiz 1：CNN 與 ViT 影像檢索
 
@@ -29,7 +29,7 @@
 - 使用 Flickr8k 的 2,000 張訓練影像與 200 張測試影像。
 - 凍結 CLIP ViT-B/32 Image Encoder，訓練 GPT-2 Decoder 與新增的 cross-attention，並用 beam search（beam size=5）生成描述。
 - CLIP-GPT2 的 BLEU-1／BLEU-4／BERTScore F1 為 **0.1598／0.0106／0.8140**。
-- Week 4 BLIP beam-5 的對應結果為 **0.2890／0.0831／0.9143**；差距顯示 image-text alignment 與生成式跨模態預訓練的重要性。
+- HW4 BLIP beam-5 的對應結果為 **0.2890／0.0831／0.9143**；差距顯示 image-text alignment 與生成式跨模態預訓練的重要性。
 
 ## 重現性與檔案範圍
 
