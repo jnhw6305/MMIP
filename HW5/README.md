@@ -6,9 +6,9 @@
 
 | 題目 | 資料集與模型 | 評估與進階內容 | Notebook |
 | --- | --- | --- | --- |
-| Quiz 1：影像檢索 | CIFAR-10；ResNet-18／ViT-Tiny | Recall@1/5/10、Precision@5、mAP@10；CNN 與 ViT 比較 | [開啟](MMIP_Week05_Quiz1_Image_Retrieval.ipynb) |
-| Quiz 2：多模態分類 | MM-IMDb；影像 backbone＋DistilBERT＋fusion MLP | Micro/Macro-F1、Subset Accuracy、Hamming Loss；更換影像 backbone | [開啟](MMIP_Week05_Quiz2_Multimodal_Classification.ipynb) |
-| Quiz 3：CLIP Image Captioning | Flickr8k；CLIP ViT-B/32＋GPT-2 Decoder | BLEU-1/4、BERTScore、推論案例；與 Week 4 BLIP 比較 | [開啟](MMIP_Week05_Quiz3_CLIP_Image_Captioning.ipynb) |
+| Quiz 1：影像檢索 | CIFAR-10；ResNet-18／ViT-Tiny | Recall@1/5/10、Precision@5、mAP@10；CNN 與 ViT 比較 | [開啟](MMIP_HW5_Quiz1_Image_Retrieval.ipynb) |
+| Quiz 2：多模態分類 | MM-IMDb；影像 backbone＋DistilBERT＋fusion MLP | Micro/Macro-F1、Subset Accuracy、Hamming Loss；更換影像 backbone | [開啟](MMIP_HW5_Quiz2_Multimodal_Classification.ipynb) |
+| Quiz 3：CLIP Image Captioning | Flickr8k；CLIP ViT-B/32＋GPT-2 Decoder | BLEU-1/4、BERTScore、推論案例；與 Week 4 BLIP 比較 | [開啟](MMIP_HW5_Quiz3_CLIP_Image_Captioning.ipynb) |
 
 ## Quiz 1：CNN 與 ViT 影像檢索
 
