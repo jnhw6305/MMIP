@@ -10,7 +10,7 @@
 - [MIDTERM 原始碼、實驗程式與完整結果](MIDTERM/README.md)
 
 
-## 第一週導覽
+## HW1導覽
 
 - [HW1 作業總覽與執行方式](HW1/README.md)
 - [程式碼與指令](HW1/Code/README.md)
@@ -26,7 +26,7 @@
 
 執行環境需要 Python、NumPy 與 OpenCV。於儲存庫根目錄執行程式；詳細指令見 [HW1/Code/README.md](HW1/Code/README.md)。報告中的「成功產圖」不等於完美影像，請一併查看角點、接縫、黑邊及限制說明。
 
-## 第二週導覽
+## HW2導覽
 
 [HW2：信用卡違約分類與模型評估](HW2/README.md) 完成 Quiz 1–3 的基礎與進階要求：
 
@@ -36,7 +36,7 @@
 
 第二週執行環境需要 Python、NumPy、Pandas、Scikit-Learn、PyTorch 與 Matplotlib；執行方式和完整實驗結果請見 [HW2 作業報告](HW2/README.md)。
 
-## 第三週導覽
+## HW3導覽
 
 [HW3：CNN 影像分類與可解釋性分析](HW3/README.md) 使用 CIFAR-10 比較自行設計的 MultiScale-Pyramid CNN 與 ImageNet 預訓練 MobileNetV2：
 
@@ -47,7 +47,7 @@
 
 基準實驗中，MobileNetV2 的測試 Top-1／Top-5／Macro-AUC 為 **0.8909／0.9965／0.992878**；自行設計的 Plain CNN 以 299,754 個參數取得 **0.8427** Top-1。作業導覽與 Colab 開啟方式請見 [HW3 README](HW3/README.md)；GitHub 可直接閱讀[預覽版 Notebook](HW3/MMIP_CNN完整作業.ipynb)，正式輸出則保存在[含輸出版本](HW3/MMIP_CNN完整作業_含輸出.ipynb)。
 
-## 第四週導覽
+## HW4導覽
 
 [HW4](HW4/README.md) 完成文字情緒分析、影像分類與影像描述實驗。
 
@@ -57,7 +57,7 @@
 - 使用 Gemini API 對影像描述結果進行額外語意評估。
 - 完整實驗數據請參閱 [HW4/REPORT.md](HW4/REPORT.md) 與 [HW4/results](HW4/results)。
 
-## 第五週導覽
+## HW5導覽
 
 [HW5：多模態深度學習神經網路](HW5/README.md) 完成影像檢索、影像與文字融合分類，以及 CLIP Image Captioning：
 
@@ -67,7 +67,7 @@
 - 與 Week 4 BLIP 比較後，CLIP-GPT2 表現較低，說明 image-text alignment 與跨模態生成式預訓練的重要性。
 - 三份 notebook 均包含正式訓練輸出、指標比較、視覺化推論與完整實驗結論，詳見 [HW5 作業總覽](HW5/README.md)。
 
-## 第七週導覽
+## HW6導覽
 
 [HW6：LLM、VLM 與 DPO 實驗](HW6/README.md) 完成作業 A、B、C 的基礎與進階要求。三份 notebook 皆透過 **Google Colab** 與 **NVIDIA Tesla T4 GPU** 執行，完整執行記錄及輸出結果一併保存。
 
