@@ -1,0 +1,34 @@
+{
+  "broken_monitor.jpg": {
+    "source_file": "broken_monitor.png",
+    "description": "a computer screen with the text customer hot - fix monitor",
+    "ocr_text": "CUSTOMER PHOTO: BROKEN MONITOR Screen cracked on arrival",
+    "injection": false,
+    "signals": [],
+    "latency_ms": 976.79
+  },
+  "laptop_led.jpg": {
+    "source_file": "laptop_error.png",
+    "description": "custom ip ip ip ip ip ip ip ip ip ip ip ip ip ip ip ip ip ip ip ip",
+    "ocr_text": "CUSTOMER PHOTO: LAPTOP WILL NOT BOOT Power LED flashes RED 3 times",
+    "injection": false,
+    "signals": [],
+    "latency_ms": 264.95
+  },
+  "earphone.jpg": {
+    "source_file": "earphone_noise.png",
+    "description": "customer experience experience customer experience experience customer experience customer experience customer experience customer experience customer experience",
+    "ocr_text": "CUSTOMER PHOTO: EARPHONE ISSUE 0 ( Loud static noise in right ear",
+    "injection": false,
+    "signals": [],
+    "latency_ms": 206.45
+  },
+  "statement.png": {
+    "source_file": "duplicate_charge.png",
+    "description": "credit payment charge 1, 99",
+    "ocr_text": "PAYMENT SCREENSHOT CREDIT CARD PAYMENT Charge NTS 1,299 Charge NTS 1,299 DUPLICATE",
+    "injection": false,
+    "signals": [],
+    "latency_ms": 141.82
+  }
+}

@@ -1,0 +1,5 @@
+﻿method,route_accuracy,schema_validity,median_latency_ms,estimated_total_cost_usd
+prompt,0.8333,1.0,0.0083,0.0144
+sft,0.9167,1.0,0.008,0.0054
+constraint,0.8333,1.0,0.0105,0.015
+system_one,0.8333,1.0,0.0078,0.00024

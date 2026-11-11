@@ -72,3 +72,15 @@
 [HW6：LLM、VLM 與 DPO 實驗](HW6/README.md) 完成作業 A、B、C 的基礎與進階要求。三份 notebook 皆透過 **Google Colab** 與 **NVIDIA Tesla T4 GPU** 執行，完整執行記錄及輸出結果一併保存。
 
 作業 C 使用完整 120 組 VLM 偏好資料。由於 TRL 在訓練前預處理全部影像時會耗盡 Colab 系統 RAM，因此以固定 seed 洗牌後切成 **4 個互斥批次，每批 30 組**，依序更新同一組 LoRA adapter；四批合計涵蓋全部資料，詳細方法、限制與結果請見 [HW6 README](HW6/README.md)。
+
+## HW7導覽
+
+[HW7：大型語言模型結構化輸出與多模態多輪客服分流](HW7/README.md) 完成 Prompt、LoRA SFT、Constraint Decoding 與 System One 四種分流節點的實作與比較：
+
+- 建立支援文字、圖片與多輪上下文的 3C 電商客服，輸出固定 JSON Spec 並分流至商品、訂單、退貨、維修、付款、安全或人工處理。
+- 以 12 筆獨立案例、每案 10 次量化 route accuracy、原始輸出 schema validity、P50／P95 延遲與能源成本估計；LoRA SFT 在本測試集取得 **75% route accuracy／100% schema validity**。
+- 以 BLIP＋EasyOCR 實際分析影像像素；13 張圖片安全測試包含 7 張正常與 6 張提示注入攻擊。
+- 完成閱讀時間 UX、離題處理、文字／圖片攻擊防禦、下游重試、人工轉接與 audit log，8 項單元測試全部通過。
+- [公開互動展示](https://mmip-nova-care-hw7.legendaryhunter87.chatgpt.site)｜[完整報告](HW7/REPORT.md)｜[逐項繳交檢核](HW7/SUBMISSION_CHECKLIST.md)
+
+HW7 的大型 adapter、tokenizer 與中間 checkpoint 未納入 Git；固定 seed、資料切分、重建指令、訓練 metrics 與原始 Benchmark 結果均已保存，以提交前可重現性檢核為原則。

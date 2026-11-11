@@ -1,0 +1,121 @@
+{
+  "rows": [
+    {
+      "id": "B01",
+      "baseline_visible_chars": 457,
+      "optimized_visible_chars": 29,
+      "baseline_processing_feedback": false,
+      "optimized_processing_feedback": true,
+      "reading_delay_ms": 972,
+      "detail_available_on_demand": true
+    },
+    {
+      "id": "B02",
+      "baseline_visible_chars": 451,
+      "optimized_visible_chars": 27,
+      "baseline_processing_feedback": false,
+      "optimized_processing_feedback": true,
+      "reading_delay_ms": 936,
+      "detail_available_on_demand": true
+    },
+    {
+      "id": "B03",
+      "baseline_visible_chars": 415,
+      "optimized_visible_chars": 30,
+      "baseline_processing_feedback": false,
+      "optimized_processing_feedback": true,
+      "reading_delay_ms": 990,
+      "detail_available_on_demand": true
+    },
+    {
+      "id": "B04",
+      "baseline_visible_chars": 507,
+      "optimized_visible_chars": 28,
+      "baseline_processing_feedback": false,
+      "optimized_processing_feedback": true,
+      "reading_delay_ms": 954,
+      "detail_available_on_demand": true
+    },
+    {
+      "id": "B05",
+      "baseline_visible_chars": 437,
+      "optimized_visible_chars": 29,
+      "baseline_processing_feedback": false,
+      "optimized_processing_feedback": true,
+      "reading_delay_ms": 972,
+      "detail_available_on_demand": true
+    },
+    {
+      "id": "B06",
+      "baseline_visible_chars": 338,
+      "optimized_visible_chars": 46,
+      "baseline_processing_feedback": false,
+      "optimized_processing_feedback": true,
+      "reading_delay_ms": 1278,
+      "detail_available_on_demand": true
+    },
+    {
+      "id": "B07",
+      "baseline_visible_chars": 338,
+      "optimized_visible_chars": 46,
+      "baseline_processing_feedback": false,
+      "optimized_processing_feedback": true,
+      "reading_delay_ms": 1278,
+      "detail_available_on_demand": true
+    },
+    {
+      "id": "B08",
+      "baseline_visible_chars": 482,
+      "optimized_visible_chars": 57,
+      "baseline_processing_feedback": false,
+      "optimized_processing_feedback": true,
+      "reading_delay_ms": 1476,
+      "detail_available_on_demand": true
+    },
+    {
+      "id": "B09",
+      "baseline_visible_chars": 553,
+      "optimized_visible_chars": 57,
+      "baseline_processing_feedback": false,
+      "optimized_processing_feedback": true,
+      "reading_delay_ms": 1476,
+      "detail_available_on_demand": true
+    },
+    {
+      "id": "B10",
+      "baseline_visible_chars": 338,
+      "optimized_visible_chars": 46,
+      "baseline_processing_feedback": false,
+      "optimized_processing_feedback": true,
+      "reading_delay_ms": 1278,
+      "detail_available_on_demand": true
+    },
+    {
+      "id": "B11",
+      "baseline_visible_chars": 529,
+      "optimized_visible_chars": 28,
+      "baseline_processing_feedback": false,
+      "optimized_processing_feedback": true,
+      "reading_delay_ms": 954,
+      "detail_available_on_demand": true
+    },
+    {
+      "id": "B12",
+      "baseline_visible_chars": 492,
+      "optimized_visible_chars": 29,
+      "baseline_processing_feedback": false,
+      "optimized_processing_feedback": true,
+      "reading_delay_ms": 972,
+      "detail_available_on_demand": true
+    }
+  ],
+  "summary": {
+    "n": 12,
+    "mean_baseline_visible_chars": 444.8,
+    "mean_optimized_visible_chars": 37.7,
+    "visible_information_reduction_pct": 91.5,
+    "processing_feedback_coverage_before": 0.0,
+    "processing_feedback_coverage_after": 1.0,
+    "claim_scope": "UI telemetry proxy; not a human-subject usability study"
+  }
+}

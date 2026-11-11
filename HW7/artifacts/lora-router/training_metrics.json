@@ -1,0 +1,28 @@
+{
+  "train": {
+    "runtime_seconds": 24.6706523001194,
+    "epochs": 3,
+    "examples": 238
+  },
+  "validation": {
+    "examples": 42,
+    "final_loss": 0.00277779493692585
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.6126602234939734,
+      "validation_loss": 0.13451473956758325
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.060084919755657516,
+      "validation_loss": 0.018207373563200235
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.009724725817795843,
+      "validation_loss": 0.00277779493692585
+    }
+  ]
+}

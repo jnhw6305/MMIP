@@ -1,0 +1,10 @@
+torch>=2.5
+transformers>=4.57,<5
+peft>=0.17
+trl>=0.24
+datasets>=4
+accelerate>=1
+sentencepiece>=0.2
+outlines>=1.2
+pydantic>=2.10
+easyocr>=1.7
