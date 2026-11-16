@@ -1,0 +1,15 @@
+{
+  "best": {
+    "chunk_size": 240,
+    "overlap": 0,
+    "top_k": 3,
+    "context_recall": 1.0,
+    "answer_similarity": 0.12867826979602723,
+    "score": 0.5643391348980136
+  },
+  "metrics": {
+    "context_recall": 1.0,
+    "answer_similarity": 0.12867826979602723,
+    "faithfulness_proxy": 0.96
+  }
+}

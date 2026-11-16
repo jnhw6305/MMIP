@@ -1,0 +1,21 @@
+{
+  "recorded_at": "2026-11-11",
+  "videos": [
+    {
+      "file": "silent_operation.mp4",
+      "duration_seconds": 146.0,
+      "size_bytes": 19434584,
+      "sha256": "5cf34589f9573ba3c4682aeed4f1fbe5353ebbd1009d174b533d0e34438d3fd0",
+      "modality": "visual",
+      "sidecar": "sidecars/silent_operation.json"
+    },
+    {
+      "file": "spoken_transformer.mp4",
+      "duration_seconds": 49.01,
+      "size_bytes": 19208131,
+      "sha256": "cdb64f6df6f997d2f6dc4c89a8acc7fa5a0aeb4395c0712ac420b2a414dbce1a",
+      "modality": "speech",
+      "sidecar": "sidecars/spoken_transformer.json"
+    }
+  ]
+}

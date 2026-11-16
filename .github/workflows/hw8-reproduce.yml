@@ -1,0 +1,57 @@
+name: HW8 cross-platform reproducibility
+
+on:
+  push:
+    paths:
+      - "HW8/**"
+      - ".github/workflows/hw8-reproduce.yml"
+  pull_request:
+    paths:
+      - "HW8/**"
+      - ".github/workflows/hw8-reproduce.yml"
+  workflow_dispatch:
+
+jobs:
+  reproduce:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python-version: ["3.12", "3.13"]
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        working-directory: HW8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: HW8/requirements-lock.txt
+      - name: Install locked dependencies
+        run: python -m pip install -r requirements-lock.txt
+      - name: Reproduce all experiments
+        run: python -m src.mmip_rag.cli all
+      - name: Run official RAGAS metrics
+        run: python -m src.mmip_rag.ragas_eval
+      - name: Write reproducibility manifest
+        run: python -m src.mmip_rag.reproduce
+      - name: Run tests
+        run: python -m unittest discover -s tests -v
+      - uses: actions/upload-artifact@v4
+        with:
+          name: hw8-outputs-${{ matrix.os }}-py${{ matrix.python-version }}
+          path: HW8/outputs/
+
+  compare-platforms:
+    needs: reproduce
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: hw8-outputs-*
+          path: ci_artifacts
+      - name: Require identical core hashes on all runners
+        run: python HW8/scripts/compare_manifests.py ci_artifacts

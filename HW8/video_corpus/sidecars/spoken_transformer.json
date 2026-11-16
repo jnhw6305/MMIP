@@ -1,0 +1,38 @@
+[
+  {
+    "start": 0.0,
+    "end": 6.72,
+    "text": "大家好，我是陳俊豪。這段影片將介紹 Transformer。",
+    "modality": "speech"
+  },
+  {
+    "start": 6.72,
+    "end": 18.4,
+    "text": "Transformer 是由 Vaswani 等人在 2017 年提出的模型。它以注意力機制取代傳統的循環與卷積結構。",
+    "modality": "speech"
+  },
+  {
+    "start": 18.4,
+    "end": 26.04,
+    "text": "Self-Attention 使用 Query、Key 還有 Value，計算序列元素之間的關係。",
+    "modality": "speech"
+  },
+  {
+    "start": 26.04,
+    "end": 33.56,
+    "text": "計算結果會除以根號 d_k，避免內積過大造成 softmax 梯度過小。",
+    "modality": "speech"
+  },
+  {
+    "start": 33.56,
+    "end": 39.96,
+    "text": "Multi-Head Attention 使用多頭投影，使模型能學習不同的關係。",
+    "modality": "speech"
+  },
+  {
+    "start": 39.96,
+    "end": 48.36,
+    "text": "由於 Transformer 沒有循環結構，因此需要 Positional Encoding（位置編碼）來表示原本的位置與順序。",
+    "modality": "speech"
+  }
+]

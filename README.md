@@ -84,3 +84,14 @@
 - [公開互動展示](https://mmip-nova-care-hw7.legendaryhunter87.chatgpt.site)｜[完整報告](HW7/REPORT.md)｜[逐項繳交檢核](HW7/SUBMISSION_CHECKLIST.md)
 
 HW7 的大型 adapter、tokenizer 與中間 checkpoint 未納入 Git；固定 seed、資料切分、重建指令、訓練 metrics 與原始 Benchmark 結果均已保存，以提交前可重現性檢核為原則。
+
+## HW8導覽
+
+[HW8：多輪 RAG、VideoRAG、系統評估與 GraphRAG](HW8/README.md) 完成課程作業一至四的全部基礎與進階要求：
+
+- 文字 RAG：25 題自製 QA Dataset、多輪對話與引用，並比較 Chunk Size、Overlap、Top-K 與三種 prompting technique。
+- VideoRAG：收錄自行錄製的有聲與無聲影片，以語音、OCR／畫面事件與時間區段建立多模態檢索，並完成多輪問答與時間引用。
+- 系統評估：保存 RAGAS 相容資料與離線指標，另以 modality recall、citation validity 與 temporal IoU 評估 VideoRAG。
+- GraphRAG：將 Transformer 論文知識 Graph 化，以 22 題 Benchmark 評估回答與關係事實召回率。
+- 支援 Windows、Linux／macOS 與 Docker 跨主機重現；10 項自動化測試皆通過。
+- [完整報告](HW8/REPORT.md)｜[評分要求稽核](HW8/AUDIT.md)｜[重現性說明](HW8/REPRODUCIBILITY.md)｜[繳交清單](HW8/SUBMISSION_MANIFEST.md)

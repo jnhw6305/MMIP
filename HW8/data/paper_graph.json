@@ -1,0 +1,9 @@
+{
+ "paper":{"title":"Attention Is All You Need","year":2017,"source":"https://arxiv.org/abs/1706.03762"},
+ "nodes":[
+  ["Transformer","architecture"],["Encoder","component"],["Decoder","component"],["Self-Attention","mechanism"],["Masked Self-Attention","mechanism"],["Multi-Head Attention","mechanism"],["Scaled Dot-Product Attention","mechanism"],["Positional Encoding","representation"],["Feed-Forward Network","component"],["Residual Connection","component"],["Layer Normalization","component"],["Adam","optimizer"],["WMT14 EN-DE","dataset"],["WMT14 EN-FR","dataset"],["BLEU 28.4","result"],["BLEU 41.8","result"],["8 heads","hyperparameter"],["d_model 512","hyperparameter"],["d_ff 2048","hyperparameter"],["warmup 4000","hyperparameter"],["dropout 0.1","hyperparameter"],["label smoothing 0.1","hyperparameter"]
+ ],
+ "edges":[
+  ["Transformer","contains","Encoder"],["Transformer","contains","Decoder"],["Encoder","uses","Self-Attention"],["Decoder","uses","Masked Self-Attention"],["Decoder","attends_to","Encoder"],["Multi-Head Attention","implements","Scaled Dot-Product Attention"],["Transformer","uses","Multi-Head Attention"],["Transformer","uses","Positional Encoding"],["Encoder","contains","Feed-Forward Network"],["Decoder","contains","Feed-Forward Network"],["Encoder","uses","Residual Connection"],["Decoder","uses","Residual Connection"],["Residual Connection","followed_by","Layer Normalization"],["Transformer","trained_with","Adam"],["Transformer","evaluated_on","WMT14 EN-DE"],["Transformer","evaluated_on","WMT14 EN-FR"],["WMT14 EN-DE","achieves","BLEU 28.4"],["WMT14 EN-FR","achieves","BLEU 41.8"],["Multi-Head Attention","has","8 heads"],["Transformer","has","d_model 512"],["Feed-Forward Network","has","d_ff 2048"],["Adam","uses_schedule","warmup 4000"],["Transformer","regularized_by","dropout 0.1"],["Transformer","regularized_by","label smoothing 0.1"]
+ ]
+}

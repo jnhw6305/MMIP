@@ -1,0 +1,5 @@
+﻿question,expected_modality,modality_recall,citation_validity,segment_count,temporal_iou
+哪一段介紹注意力？,speech,1.0,1.0,3,0.3513838748495788
+何時查看引用？,visual,1.0,1.0,3,1.0
+位置編碼的用途？,speech,1.0,1.0,3,1.0
+何時切換 GraphRAG？,visual,1.0,1.0,3,1.0

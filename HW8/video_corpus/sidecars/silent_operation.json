@@ -1,0 +1,50 @@
+[
+  {
+    "start": 0,
+    "end": 15,
+    "text": "開啟 Chrome 無痕視窗，在網址列輸入 localhost:8501，準備進入 MMIP RAG Lab。",
+    "modality": "visual"
+  },
+  {
+    "start": 15,
+    "end": 25,
+    "text": "載入 MMIP RAG Lab，停留在文字 RAG 頁面。",
+    "modality": "visual"
+  },
+  {
+    "start": 25,
+    "end": 70,
+    "text": "在文字 RAG 輸入並送出 Scaled Dot-Product Attention 為何除以 sqrt(d_k) 的問題。",
+    "modality": "visual"
+  },
+  {
+    "start": 70,
+    "end": 80,
+    "text": "文字 RAG 顯示縮放點積注意力答案，並展開 References 與檢索分數查看文件引用。",
+    "modality": "visual"
+  },
+  {
+    "start": 80,
+    "end": 90,
+    "text": "從文字 RAG 切換到 GraphRAG 頁面。",
+    "modality": "visual"
+  },
+  {
+    "start": 90,
+    "end": 130,
+    "text": "在 GraphRAG 輸入 Decoder 如何連到 Scaled Dot-Product Attention 的關係路徑問題。",
+    "modality": "visual"
+  },
+  {
+    "start": 130,
+    "end": 140,
+    "text": "GraphRAG 顯示 Decoder 經由 Transformer 與 Multi-Head Attention 連到 Scaled Dot-Product Attention 的多跳路徑。",
+    "modality": "visual"
+  },
+  {
+    "start": 140,
+    "end": 146,
+    "text": "切換到實驗結果頁面，顯示 RAG、prompt、VideoRAG 與 GraphRAG 評估產物的下載按鈕。",
+    "modality": "visual"
+  }
+]

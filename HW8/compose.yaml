@@ -1,0 +1,13 @@
+services:
+  reproduce:
+    build: .
+    command: ["sh", "scripts/reproduce.sh"]
+    volumes:
+      - ./outputs:/workspace/outputs
+  ui:
+    build: .
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./outputs:/workspace/outputs
+      - ./video_corpus:/workspace/video_corpus:ro

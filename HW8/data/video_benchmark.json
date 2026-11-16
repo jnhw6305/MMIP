@@ -1,0 +1,6 @@
+[
+ {"q":"哪一段介紹注意力？","modality":"speech","start":6.72,"end":39.96},
+ {"q":"何時查看引用？","modality":"visual","start":70,"end":80},
+ {"q":"位置編碼的用途？","modality":"speech","start":39.96,"end":48.36},
+ {"q":"何時切換 GraphRAG？","modality":"visual","start":80,"end":90}
+]

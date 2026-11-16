@@ -1,0 +1,2 @@
+# Optional: only needed to transcribe newly recorded speech videos.
+openai-whisper==20250625

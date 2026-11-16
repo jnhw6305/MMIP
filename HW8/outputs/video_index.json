@@ -1,0 +1,114 @@
+[
+  {
+    "id": "V1",
+    "title": "silent_operation.mp4",
+    "text": "開啟 Chrome 無痕視窗，在網址列輸入 localhost:8501，準備進入 MMIP RAG Lab。",
+    "start": 0,
+    "end": 15,
+    "modality": "visual"
+  },
+  {
+    "id": "V2",
+    "title": "silent_operation.mp4",
+    "text": "載入 MMIP RAG Lab，停留在文字 RAG 頁面。",
+    "start": 15,
+    "end": 25,
+    "modality": "visual"
+  },
+  {
+    "id": "V3",
+    "title": "silent_operation.mp4",
+    "text": "在文字 RAG 輸入並送出 Scaled Dot-Product Attention 為何除以 sqrt(d_k) 的問題。",
+    "start": 25,
+    "end": 70,
+    "modality": "visual"
+  },
+  {
+    "id": "V4",
+    "title": "silent_operation.mp4",
+    "text": "文字 RAG 顯示縮放點積注意力答案，並展開 References 與檢索分數查看文件引用。",
+    "start": 70,
+    "end": 80,
+    "modality": "visual"
+  },
+  {
+    "id": "V5",
+    "title": "silent_operation.mp4",
+    "text": "從文字 RAG 切換到 GraphRAG 頁面。",
+    "start": 80,
+    "end": 90,
+    "modality": "visual"
+  },
+  {
+    "id": "V6",
+    "title": "silent_operation.mp4",
+    "text": "在 GraphRAG 輸入 Decoder 如何連到 Scaled Dot-Product Attention 的關係路徑問題。",
+    "start": 90,
+    "end": 130,
+    "modality": "visual"
+  },
+  {
+    "id": "V7",
+    "title": "silent_operation.mp4",
+    "text": "GraphRAG 顯示 Decoder 經由 Transformer 與 Multi-Head Attention 連到 Scaled Dot-Product Attention 的多跳路徑。",
+    "start": 130,
+    "end": 140,
+    "modality": "visual"
+  },
+  {
+    "id": "V8",
+    "title": "silent_operation.mp4",
+    "text": "切換到實驗結果頁面，顯示 RAG、prompt、VideoRAG 與 GraphRAG 評估產物的下載按鈕。",
+    "start": 140,
+    "end": 146,
+    "modality": "visual"
+  },
+  {
+    "id": "V9",
+    "title": "spoken_transformer.mp4",
+    "text": "大家好，我是陳俊豪。這段影片將介紹 Transformer。",
+    "start": 0.0,
+    "end": 6.72,
+    "modality": "speech"
+  },
+  {
+    "id": "V10",
+    "title": "spoken_transformer.mp4",
+    "text": "Transformer 是由 Vaswani 等人在 2017 年提出的模型。它以注意力機制取代傳統的循環與卷積結構。",
+    "start": 6.72,
+    "end": 18.4,
+    "modality": "speech"
+  },
+  {
+    "id": "V11",
+    "title": "spoken_transformer.mp4",
+    "text": "Self-Attention 使用 Query、Key 還有 Value，計算序列元素之間的關係。",
+    "start": 18.4,
+    "end": 26.04,
+    "modality": "speech"
+  },
+  {
+    "id": "V12",
+    "title": "spoken_transformer.mp4",
+    "text": "計算結果會除以根號 d_k，避免內積過大造成 softmax 梯度過小。",
+    "start": 26.04,
+    "end": 33.56,
+    "modality": "speech"
+  },
+  {
+    "id": "V13",
+    "title": "spoken_transformer.mp4",
+    "text": "Multi-Head Attention 使用多頭投影，使模型能學習不同的關係。",
+    "start": 33.56,
+    "end": 39.96,
+    "modality": "speech"
+  },
+  {
+    "id": "V14",
+    "title": "spoken_transformer.mp4",
+    "text": "由於 Transformer 沒有循環結構，因此需要 Positional Encoding（位置編碼）來表示原本的位置與順序。",
+    "start": 39.96,
+    "end": 48.36,
+    "modality": "speech"
+  }
+]

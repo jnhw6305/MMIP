@@ -1,0 +1,23 @@
+﻿question,expected,graph_answer,baseline_nodes_only,graph_fact_recall,baseline_fact_recall,gain,path_count
+Transformer 包含哪兩個主要堆疊？,Encoder Decoder,Transformer --contains--> Encoder；Transformer --contains--> Decoder；Encoder --contains--> Feed-Forward Network；Decoder --contains--> Feed-Forward Network,Transformer,1.0,0.0,1.0,4
+Encoder 使用何種核心機制？,Self-Attention,Encoder --uses--> Self-Attention；Encoder --uses--> Residual Connection,Encoder,1.0,0.0,1.0,2
+Decoder 如何避免看到未來 token？,Masked Self-Attention,Decoder --uses--> Masked Self-Attention；Decoder --uses--> Residual Connection,Decoder,1.0,0.0,1.0,2
+Decoder 會注意哪個元件的輸出？,Encoder,Transformer --contains--> Decoder；Decoder --attends_to--> Encoder；Decoder --contains--> Feed-Forward Network；Encoder --contains--> Feed-Forward Network,Decoder,1.0,0.0,1.0,4
+多頭注意力實作哪種基本注意力？,Scaled Dot-Product Attention,Multi-Head Attention --implements--> Scaled Dot-Product Attention；Transformer --uses--> Multi-Head Attention,Multi-Head Attention,1.0,0.25,0.75,2
+Transformer 如何表示順序？,Positional Encoding,Transformer --uses--> Multi-Head Attention；Transformer --uses--> Positional Encoding,Transformer,1.0,0.0,1.0,2
+前饋網路位於哪些堆疊？,Encoder Decoder,Encoder --contains--> Feed-Forward Network；Decoder --contains--> Feed-Forward Network,Feed-Forward Network,1.0,0.0,1.0,2
+殘差連接後接什麼？,Layer Normalization,Residual Connection --followed_by--> Layer Normalization,Residual Connection,1.0,0.0,1.0,1
+訓練 optimizer？,Adam,Transformer --trained_with--> Adam,Adam,1.0,1.0,0.0,1
+英德資料集？,WMT14 EN-DE,Transformer --evaluated_on--> WMT14 EN-DE,WMT14 EN-DE,1.0,1.0,0.0,1
+英法資料集？,WMT14 EN-FR,Transformer --evaluated_on--> WMT14 EN-FR,WMT14 EN-FR,1.0,1.0,0.0,1
+英德結果？,BLEU 28.4,WMT14 EN-DE --achieves--> BLEU 28.4,WMT14 EN-DE,1.0,0.0,1.0,1
+英法結果？,BLEU 41.8,WMT14 EN-FR --achieves--> BLEU 41.8,WMT14 EN-FR,1.0,0.0,1.0,1
+attention head 數？,8 heads,Multi-Head Attention --has--> 8 heads,Multi-Head Attention Self-Attention Scaled Dot-Product Attention,1.0,0.0,1.0,1
+模型維度？,d_model 512,Transformer --has--> d_model 512,Transformer,1.0,0.0,1.0,1
+前饋內層維度？,d_ff 2048,Feed-Forward Network --has--> d_ff 2048,Feed-Forward Network,1.0,0.0,1.0,1
+warmup？,warmup 4000,Adam --uses_schedule--> warmup 4000,warmup 4000,1.0,1.0,0.0,1
+dropout？,dropout 0.1,Transformer --regularized_by--> dropout 0.1,dropout 0.1,1.0,1.0,0.0,1
+label smoothing？,label smoothing 0.1,Transformer --regularized_by--> label smoothing 0.1,label smoothing 0.1,1.0,1.0,0.0,1
+哪些正則化連到 Transformer？,dropout 0.1 label smoothing 0.1,Transformer --regularized_by--> dropout 0.1；Transformer --regularized_by--> label smoothing 0.1,Transformer,1.0,0.0,1.0,2
+從 Transformer 到 BLEU 28.4 的關係鏈？,Transformer evaluated_on WMT14 EN-DE achieves BLEU 28.4,Transformer --evaluated_on--> WMT14 EN-DE；WMT14 EN-DE --achieves--> BLEU 28.4,Transformer BLEU 28.4,1.0,0.4444444444444444,0.5555555555555556,2
+從 Decoder 到 Scaled Dot-Product Attention 的關係？,Decoder uses Masked Self-Attention; Transformer uses Multi-Head Attention implements Scaled Dot-Product Attention,Decoder --inverse_contains--> Transformer；Transformer --uses--> Multi-Head Attention；Multi-Head Attention --implements--> Scaled Dot-Product Attention,Decoder Scaled Dot-Product Attention,0.8333333333333334,0.4166666666666667,0.4166666666666667,3

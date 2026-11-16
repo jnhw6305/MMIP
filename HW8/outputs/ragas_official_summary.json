@@ -1,0 +1,7 @@
+{
+  "ragas_version": "0.2.15",
+  "rows": 25,
+  "exact_match": 0.0,
+  "string_present": 0.2,
+  "note": "Deterministic non-LLM RAGAS metrics"
+}

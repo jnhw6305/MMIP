@@ -1,0 +1,4 @@
+﻿prompt,context_recall,answer_similarity,faithfulness_proxy
+direct,1.0,0.21491292936886774,1.0
+grounded,1.0,0.12867826979602723,0.96
+cot-plan,1.0,0.10498572404164626,0.96
