@@ -23,7 +23,7 @@ class VideoRAG(RAG):
 def ingest(root):
     root=Path(root); raw=root/"video_corpus/raw"; side=root/"video_corpus/sidecars"; docs=[]
     raw.mkdir(parents=True,exist_ok=True)
-    files=list(raw.glob("*.mp4"))
+    files=sorted(raw.glob("*.mp4"),key=lambda path:path.name.casefold())
     for video in files:
         sf=side/(video.stem+".json")
         if not sf.exists():
@@ -37,7 +37,7 @@ def ingest(root):
         for seg in json.loads(sf.read_text(encoding="utf-8")):
             docs.append({"id":f"V{len(docs)+1}","title":video.name,"text":seg["text"],"start":seg["start"],"end":seg["end"],"modality":seg.get("modality","speech")})
     if not docs:
-        sidecar_files=list(side.glob("*.json"))
+        sidecar_files=sorted(side.glob("*.json"),key=lambda path:path.name.casefold())
         for sf in sidecar_files:
             title=sf.name.replace(".json",".mp4 (recorded sidecar)")
             for seg in json.loads(sf.read_text(encoding="utf-8")):

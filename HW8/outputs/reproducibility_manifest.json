@@ -1,28 +1,28 @@
 {
-  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "python": "3.13.13 (tags/v3.13.13:01104ce, Apr  7 2026, 19:25:48) [MSC v.1944 64 bit (AMD64)]",
   "platform": "Windows-11-10.0.26200-SP0",
   "algorithm": "sha256",
   "files": {
     "data/corpus.md": "668c8b7fc9b736beac2c48b887a94bcdea808208b39594510a3f2ff0d2c24f14",
-    "data/rag_qa.json": "2f63d19bd7c9c0de20c2d3a625e29673032777baf7d3d9d6e0a9a4e418be94df",
-    "data/paper_graph.json": "fec2caa581ef8df0e3cef8a04f9a06c983431f53872823550c37dc8856f29bf3",
-    "data/graph_benchmark.json": "f160f8191fc9d5868532ac4dd8c3bf32eb41baa8eb44555ad5455aea6fbf0c9f",
-    "data/video_benchmark.json": "ed89d0da87d1d849dcaa71d11b71d7ca339b22d54450d43e15f63b321f9f5f85",
-    "video_corpus/corpus_manifest.json": "d55818c0420b5bf67cb79312683064b1362fe8afd9636484544116fab7b61198",
-    "video_corpus/sidecars/silent_operation.json": "022c36e1132d2904ba18c2b67675de0eab9a5e988940cb05933f53ba7176a062",
-    "video_corpus/sidecars/spoken_transformer.json": "a670da1bb5e4b37a7b9707c7ae4ab7009e8334c2e1c8e0be439ead24595d63bd",
-    "outputs/rag_grid.csv": "ea615bfbea6343826a3ba3c4351084f6c762c7c39299f5b647d7d2d0df258091",
-    "outputs/prompt_ablation.csv": "9002fc97d5dddd5d0119ff759e4ec194fc8e4ed2b678fd23ca516d38d9db2208",
-    "outputs/rag_summary.json": "d54fff31443f585ca194580d47a10f32017b2baf8e6536010b6dbc10498ed717",
-    "outputs/graph_eval.csv": "83d762bc106cb568f7008c28ba9bcd1e975cfa2e82d664331380a63eecbb3342",
-    "outputs/video_eval.csv": "b8146619c2d2e37b353162abcc33a2dd98c680190099ab88310a3f0388dcb222",
-    "outputs/video_index.json": "a99ce9443f188f9f4db2b01c899dce75d9956bbf360f946e1d13a3c8425de7ff",
-    "outputs/ragas_dataset.jsonl": "bc0e7e71a7a73e4d78616616635ad963e5f99e345b61caf226cbc0c85c5a8077",
+    "data/rag_qa.json": "8e144ef5da14daa409f8c0574e94e495946c058d67a3a017c7602e30d862c537",
+    "data/paper_graph.json": "6e53cd4af8d1842f99275285c68a005d243f1cbe6852bdbf6f8fb3c2ddf3c4c4",
+    "data/graph_benchmark.json": "e7bdb298ec8c4b15b5ff3cffc007d90529b1ccd23d8951993c2a99970d6bcd28",
+    "data/video_benchmark.json": "6a8f8a4effa40dc63c2696a49446447f1b30004f0986aa709da05b090876b329",
+    "video_corpus/corpus_manifest.json": "27f1edf819c078f6873be41f0e8cc8dbfc9416036af6449d4b9a6edfa0c35dcb",
+    "video_corpus/sidecars/silent_operation.json": "a0b73637f559ba6ec849cd0edc857ae96a36b62f40f653e42784570174ba04a7",
+    "video_corpus/sidecars/spoken_transformer.json": "c378119a972107dcfc604dffb10f945fc3731280bebb1b63f58767c71f63226e",
+    "outputs/rag_grid.csv": "648e7bcffb5e75675cf79af7e77a5ba862f49b9764eeb09dc50192bfae02e8db",
+    "outputs/prompt_ablation.csv": "3da405da3269a5ecf04adce58d1bef008ba82cd4541f18d239069efde02b0b0f",
+    "outputs/rag_summary.json": "32ecf492833fcb1fdcd1542a04ae7634d7e229560d1af07e39eda36d2bacf7b4",
+    "outputs/graph_eval.csv": "5a6aa8183329b7881f5ab015064df582f11cb84ff146f51833dccf7633186ac7",
+    "outputs/video_eval.csv": "60d0993fb984ac26776a7b5ba165b736979d05c6e4a265462c7766597a08e65e",
+    "outputs/video_index.json": "dbb6d19b41308f289571fc832f05d587a9cb03a5d289f5fa51e94079048c1b1c",
+    "outputs/ragas_dataset.jsonl": "edd784f2b5f796759a0ecf7cd8acb627dcf3ea6d98fd56a5365193ddbd3c620b",
     "outputs/ragas_official.csv": "6c58824835d323ea91cc1e05e2375194cf81aa958a6f6b110e9b488cc0e69c9c",
-    "outputs/ragas_official_summary.json": "132a2e4b6a6fae4424374d6674676b7c1ec0adab5c60be907348ec2c2171bd35"
+    "outputs/ragas_official_summary.json": "04a215eec3ee68065651137bfc0f9f6c29b1abcb966a2fe4c95fdc6af72f3a8b"
   },
   "packages": {
     "ragas": "not installed",
-    "streamlit": "1.67.0"
+    "streamlit": "not installed"
   }
 }
