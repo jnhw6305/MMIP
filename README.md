@@ -89,6 +89,8 @@ HW7 的大型 adapter、tokenizer 與中間 checkpoint 未納入 Git；固定 se
 
 [HW8：多輪 RAG、VideoRAG、系統評估與 GraphRAG](HW8/README.md) 完成課程作業一至四的全部基礎與進階要求：
 
+- **[直接開啟 HW8 公開互動 Demo](https://mmip-hw8-rag-lab.streamlit.app/)**
+
 - 文字 RAG：25 題自製 QA Dataset、多輪對話與引用，並比較 Chunk Size、Overlap、Top-K 與三種 prompting technique。
 - VideoRAG：收錄自行錄製的有聲與無聲影片，以語音、OCR／畫面事件與時間區段建立多模態檢索，並完成多輪問答與時間引用。
 - 系統評估：保存 RAGAS 相容資料與離線指標，另以 modality recall、citation validity 與 temporal IoU 評估 VideoRAG。
