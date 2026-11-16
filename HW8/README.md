@@ -1,6 +1,8 @@
 # MMIP HW8：完整 RAG / VideoRAG / GraphRAG 專案
 
-本專案逐項對應課程第 72–75 頁的全部基礎與進階要求。核心模式只使用 Python 標準函式庫；Streamlit 與 RAGAS 使用固定版本，Whisper 僅為錄影後的選配轉錄工具。
+本專案逐項對應課程第 72–75 頁的全部基礎與進階要求。核心模式只使用 Python 標準函式庫；Streamlit 與 RAGAS 使用固定版本，Whisper 僅為錄影後的選配轉錄工具。`requirements.txt` 是公開網頁的輕量執行環境；完整實驗與 RAGAS 的固定相依版本保存在 `requirements-lock.txt`。
+
+- **[開啟公開互動 Demo](https://mmip-hw8-rag-lab.streamlit.app/)**
 
 ## HW8 作業導覽
 
