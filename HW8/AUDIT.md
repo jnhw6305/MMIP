@@ -16,7 +16,7 @@
 | 作業四：AI 論文 Graph 化 | 完成 | Transformer：22 nodes、24 edges、來源 URL |
 | 作業四：至少 20 道 benchmark | 完成 | 22 題 |
 | 作業四：GraphRAG 回答與評估 | 完成 | 意圖式 relation 查詢／最短路徑對 nodes-only baseline，逐題 fact recall |
-| 可重現性 | 完成（本機）；跨主機待 CI/另一台 Docker 主機驗證 | Docker、完整 lock、Ubuntu/Windows CI、10 項測試、SHA-256 manifest |
+| 可重現性 | 完成；GitHub Actions 跨主機驗證通過 | Docker、完整 lock、Ubuntu/Windows × Python 3.12/3.13、10 項測試、SHA-256 manifest；[CI run 43884307883](https://github.com/jnhw6305/MMIP/actions/runs/43884307883) |
 
 ## 已知限制
 

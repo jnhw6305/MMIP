@@ -15,7 +15,7 @@
 | AI 論文 Graph 化 | 完成 | `data/paper_graph.json` |
 | 至少 20 題 GraphRAG benchmark | 完成（22 題） | `data/graph_benchmark.json` |
 | GraphRAG 回答與 benchmark 評估 | 完成 | `src/mmip_rag/graph.py`、`outputs/graph_eval.csv` |
-| 跨主機可重現性 | 已建置；待 GitHub Actions 實際執行 | `Dockerfile`、`compose.yaml`、`.github/workflows/reproduce.yml` |
+| 跨主機可重現性 | 完成；GitHub Actions 驗證通過 | `Dockerfile`、`compose.yaml`、`.github/workflows/reproduce.yml`；[CI run 43884307883](https://github.com/jnhw6305/MMIP/actions/runs/43884307883) |
 
 ## 必須上傳至 GitHub
 
